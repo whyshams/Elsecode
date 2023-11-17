@@ -67,7 +67,7 @@ export default async function Home() {
         <div className="mobile-hide">
           <ParallaxRightLeft>
             <div className="grid grid-cols-2 grid-rows-1">
-              <div className="height-100">
+              <div className="">
                 <ReviewCarousel data={clientReviewData} />
               </div>
               <div className=" grid text-center items-center">
@@ -123,7 +123,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className=" md:hidden grid place-items-center mt-14 mb-8">
+        <div className=" lg:hidden grid place-items-center mt-14 mb-8">
           <div className="grid grid-cols-1 text-center align-middle ">
             <div>
               <div className="">

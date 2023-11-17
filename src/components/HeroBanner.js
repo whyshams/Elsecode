@@ -45,7 +45,9 @@ export default function HeroBanner() {
                 <TypeAnimation
                   sequence={[
                     // Same substring at the start will only be typed out once, initially
-                    "Eta pura change kore fela hobe",
+                    "Eta pura ",
+                    1000,
+                    "change hobe ",
                     1000, // wait 1s before replacing "Mice" with "Hamsters"
                   ]}
                   wrapper="span"
