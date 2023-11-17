@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
         <body className={`${enri.variable}`}>
           <Navbar />
 
-          <div className="page">{children}</div>
+          <div className=" container">{children}</div>
           <Footer />
         </body>
       </ContextProvider>

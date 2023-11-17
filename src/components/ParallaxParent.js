@@ -16,8 +16,6 @@ export default function ParallaxParent({ children }) {
     triggerOnce: false,
   });
 
-  console.log(entry);
-
   const variants = {
     visible: { opacity: 1, scale: 1, y: 0 },
     hidden: {
@@ -34,7 +32,6 @@ export default function ParallaxParent({ children }) {
         variants={variants}
         transition={{ duration: 0.5, ease: "easeOut" }}
         ref={ref}
-        className="magic"
       >
         {children}
       </motion.div>

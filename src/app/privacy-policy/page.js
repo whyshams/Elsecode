@@ -20,7 +20,7 @@ async function getServices() {
 
 export default async function page() {
   const data = await getServices();
-  console.log(data);
+
   return (
     <div className="flex justify-center">
       {data.map((about) => (
