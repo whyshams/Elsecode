@@ -1,5 +1,7 @@
 import React from "react";
 import ContactForm from "@/components/ContactForm";
+import ParallaxLeftRight from "@/components/ParallaxLeftRight";
+import ParallaxRightLeft from "@/components/ParallaxRightLeft";
 
 export default function page() {
   return (
@@ -26,19 +28,23 @@ export default function page() {
       <div className=" md:hidden grid place-items-center mt-14 mb-8">
         <div className="grid grid-cols-1 text-center align-middle ">
           <div>
-            <div className="">
-              <h2 className="md:text-5xl text-3xl flex">
-                If You have any business, We might have some ideas for you
-              </h2>
-              <p className="flex">
-                So, lets generate ideas. Fill in the contact form and write
-                about your business or the project you have in mind. We will
-                reach you within 24 hours.
-              </p>
-            </div>
+            <ParallaxLeftRight>
+              <div className="">
+                <h2 className="md:text-5xl text-3xl flex">
+                  If You have any business, We might have some ideas for you
+                </h2>
+                <p className="flex">
+                  So, lets generate ideas. Fill in the contact form and write
+                  about your business or the project you have in mind. We will
+                  reach you within 24 hours.
+                </p>
+              </div>
+            </ParallaxLeftRight>
           </div>
           <div>
-            <ContactForm />
+            <ParallaxRightLeft>
+              <ContactForm />
+            </ParallaxRightLeft>
           </div>
         </div>
       </div>
