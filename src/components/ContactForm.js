@@ -49,33 +49,38 @@ const ContactForm = () => {
   return (
     <div className="flex justify-center">
       <form className="contact-form" onSubmit={handleSubmit}>
-        <input
-          name="name"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
+        <div>
+          <input
+            className=""
+            name="name"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
-        <input
-          placeholder="EMAIL"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <input
+            placeholder="EMAIL"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
 
-        <input
-          placeholder="PHONE N0:"
-          name="phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
+        <div>
+          <input
+            placeholder="PHONE N0:"
+            name="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
 
-        <input
-          placeholder="BUDGET"
-          name="budget"
-          value={budget}
-          onChange={(e) => setBudget(e.target.value)}
-        />
+          <input
+            placeholder="BUDGET"
+            name="budget"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+          />
+        </div>
 
         <textarea
           placeholder="DESCRIPTION OF YOUR PROJECT"

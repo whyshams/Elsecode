@@ -45,7 +45,7 @@ export default async function Home() {
           </div>
         </div>
         <div>
-          <div className="mobile-hide">
+          <div className="mobile-hide mb-10">
             <ParallaxRightLeft>
               <ClientLogoSlide />
             </ParallaxRightLeft>

@@ -44,7 +44,7 @@ export default function CaseStudyReveal({ cases, i }) {
       ref={ref}
       animate={inView ? "visible" : "hidden"}
       variants={variants}
-      transition={{ duration: 0.4, delay: i * 0.5 }}
+      transition={{ duration: 0.5, delay: i * 0.2 }}
     >
       <Link href={`/casestudy/${cases.slug.current}`}>
         <div className=" w-1/2">
