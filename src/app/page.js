@@ -35,7 +35,7 @@ export default async function Home() {
           </ParallaxParent>
         </div>
         <div className="">
-          <div className="mobile-hide height-100">
+          <div className="mobile-hide">
             <ParallaxParent>
               <ServiceCategory />
             </ParallaxParent>
