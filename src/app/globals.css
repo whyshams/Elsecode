@@ -14,7 +14,15 @@
   width: 400px;
   text-align: center;
 }
-
+.cliping {
+  color: transparent;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 .desktop-navbar a {
   margin: 20px;
 
@@ -354,17 +362,27 @@ tr {
 td {
   border: 1px solid black;
 }
+
 .contact-form input {
-  border: 1px solid black;
+  border: 1px solid rgb(197, 197, 197);
   width: 350px;
   height: 70px;
   margin: 10px;
+  border-radius: 15px;
 }
 .contact-form textarea {
-  border: 1px solid black;
+  border: 1px solid rgb(197, 197, 197);
+  border-radius: 15px;
   width: 715px;
   height: 100px;
   margin: 10px;
+}
+.contact-form button {
+  background: black;
+  padding-inline: 20px;
+  padding-block: 10px;
+  border-radius: 10px;
+  color: white;
 }
 
 .slider {

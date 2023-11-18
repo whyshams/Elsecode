@@ -33,7 +33,6 @@ export default async function page({ params }) {
   function urlFor(source) {
     return builder.image(source);
   }
-  console.log(data);
 
   return (
     <div>

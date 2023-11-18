@@ -27,7 +27,8 @@ export default function Reveal({ children }) {
       <motion.div
         animate={inView ? "visible" : "hidden"}
         variants={variants}
-        transition={{ duration: 1.1, delay: 0.3, ease: "easeOut" }}
+        transition={{ duration: 1.1, delay: 0.3, type: "tween" }}
+        key={"setuplayout_motion"}
         ref={ref}
       >
         {children}

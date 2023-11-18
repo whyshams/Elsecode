@@ -103,7 +103,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className=" mobile-hide h-screen grid place-items-center">
+        <div className=" mobile-hide h-screen grid place-items-center p-10">
           <div className="grid grid-rows-1 grid-cols-2 text-center align-middle ">
             <div>
               <ParallaxLeftRight>

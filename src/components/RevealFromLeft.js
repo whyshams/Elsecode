@@ -23,7 +23,8 @@ export default function RevealFromLeft({ children }) {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.7, delay: 0.25 }}
+        transition={{ duration: 0.7, delay: 0.25, type: "tween" }}
+        key={"setuplayout_motion"}
       >
         {children}
       </motion.div>
