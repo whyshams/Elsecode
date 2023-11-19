@@ -49,7 +49,7 @@ const ContactForm = () => {
   return (
     <div className="flex justify-center">
       <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="flex">
+        <div className="md:flex">
           <input
             className=""
             name="name"
@@ -66,7 +66,7 @@ const ContactForm = () => {
           />
         </div>
 
-        <div className="flex">
+        <div className="md:flex">
           <input
             placeholder="PHONE N0:"
             name="phone"
