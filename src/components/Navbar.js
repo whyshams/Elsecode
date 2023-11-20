@@ -12,24 +12,36 @@ import {
   FaInstagram,
   FaWhatsapp,
 } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const { windowWidth, setMobileMenuOpen, mobileMenuOpen, windowScroll } =
     useMyContext();
+  const pathname = usePathname();
   const [hover, setHover] = useState(false);
-
+  console.log(pathname);
   return (
     <header className="header">
       {windowWidth > 1100 ? (
         <div
-          style={{ position: "fixed", top: "0", zIndex: "100", width: "100%" }}
+          style={{
+            position: pathname !== "/" ? "relative" : "fixed",
+            top: "0",
+            zIndex: "100",
+            width: "100%",
+          }}
         >
           <div style={{ position: "relative" }}>
             <div
               style={{
                 position: "absolute",
                 height: "100%",
-                width: windowScroll < 500 ? `${windowScroll / 4}%` : "100%",
+                width:
+                  pathname !== "/"
+                    ? "0%"
+                    : windowScroll < 500
+                    ? `${windowScroll / 4}%`
+                    : "100%",
                 zIndex: "-1",
                 background: "black",
               }}
@@ -137,129 +149,193 @@ export default function Navbar() {
           </div>
         </div>
       ) : windowWidth < 1100 ? (
-        <div>
-          <motion.nav
-            initial={{ y: "-100vw", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, type: "spring" }}
-            className="flex justify-center"
-          >
-            <div className="basis-1/2">
-              <div className="float-left m-3">
-                <h1>
-                  <Link href="/">
-                    <Image
-                      src="/elsecodelogo.png"
-                      width={200}
-                      height={130}
-                      alt="logo"
-                    />
-                  </Link>
-                </h1>
+        <div
+          style={{
+            position: "fixed",
+            top: "0",
+            zIndex: "100",
+            width: "100%",
+          }}
+        >
+          <div style={{ position: "relative" }}>
+            <div
+              style={{
+                position: "absolute",
+                height: "100%",
+                width:
+                  pathname !== "/"
+                    ? `${windowScroll / 10}%`
+                    : windowScroll < 500
+                    ? `${windowScroll / 4}%`
+                    : "100%",
+                zIndex: "-1",
+                background: "black",
+              }}
+            ></div>
+            <motion.nav
+              initial={{ y: "-100vw", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, type: "spring" }}
+              className="flex justify-center"
+            >
+              <div className="basis-1/2">
+                <div className="float-left m-3">
+                  <h1>
+                    <Link href="/">
+                      {windowScroll > 35 ? (
+                        <Image
+                          src="/logowhite.png"
+                          width={250}
+                          height={150}
+                          alt="logo"
+                        />
+                      ) : (
+                        <Image
+                          src="/elsecodelogo.png"
+                          width={250}
+                          height={150}
+                          alt="logo"
+                        />
+                      )}
+                    </Link>
+                  </h1>
+                </div>
               </div>
-            </div>
-            <div className="basis-1/2">
-              <div
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="float-right m-3"
-              >
-                {mobileMenuOpen ? (
-                  <IconContext.Provider value={{ className: "menu-icon" }}>
-                    <RiMenuUnfoldFill />
-                  </IconContext.Provider>
-                ) : (
-                  <motion.div>
-                    <IconContext.Provider value={{ className: "menu-icon" }}>
-                      <RiMenuFoldFill />
+              <div className="basis-1/2">
+                <div
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="float-right m-3"
+                >
+                  {mobileMenuOpen ? (
+                    <IconContext.Provider
+                      value={{
+                        className:
+                          windowScroll < 350 ? "menu-icon" : "bl-bg-menu-icon",
+                      }}
+                    >
+                      <RiMenuUnfoldFill />
                     </IconContext.Provider>
-                  </motion.div>
-                )}
+                  ) : (
+                    <motion.div>
+                      <IconContext.Provider
+                        value={{
+                          className:
+                            windowScroll < 800 && pathname !== "/"
+                              ? "bl-bg-menu-icon"
+                              : windowScroll < 350
+                              ? "menu-icon"
+                              : "bl-bg-menu-icon",
+                        }}
+                      >
+                        <RiMenuFoldFill />
+                      </IconContext.Provider>
+                    </motion.div>
+                  )}
+                </div>
               </div>
-            </div>
-          </motion.nav>
-          {mobileMenuOpen && (
-            <div className="">
-              <motion.div
-                initial={{ x: "100vw" }}
-                animate={{ x: 0 }}
-                transition={{ duration: 0.4 }}
-                exit={{ x: "100vw" }}
-                className="float-right block mobile-menu-main"
-              >
-                <div className="mobile-menu-list">
+            </motion.nav>
+            {mobileMenuOpen && (
+              <div className="">
+                <motion.div
+                  initial={{ x: "100vw" }}
+                  animate={{ x: 0 }}
+                  transition={{ duration: 0.4 }}
+                  exit={{ x: "100vw" }}
+                  className="float-right block mobile-menu-main"
+                >
+                  <div className="mobile-menu-list">
+                    <motion.div
+                      initial={{ opacity: 0, x: -100 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.4 }}
+                    >
+                      <div className="mobile-menu">
+                        <Link href="/aboutus">
+                          <div
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                          >
+                            About Us
+                          </div>
+                        </Link>
+                        <Link href="/casestudy">
+                          <div
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                          >
+                            Case Study
+                          </div>
+                        </Link>
+                        <Link href="/services">
+                          <div
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                          >
+                            Service
+                          </div>
+                        </Link>
+                        <Link href="/clients">
+                          <div
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                          >
+                            Client
+                          </div>
+                        </Link>
+                        <Link href="/blogs">
+                          <div
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                          >
+                            Blog
+                          </div>
+                        </Link>
+
+                        <Link href="/contact-us">
+                          <div
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="contact-mobile "
+                          >
+                            Contact Us
+                          </div>
+                        </Link>
+                      </div>
+                    </motion.div>
+                  </div>
                   <motion.div
-                    initial={{ opacity: 0, x: -100 }}
+                    initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
+                    className=" block mt-10 float-right mobile-menu-social"
                   >
-                    <div className="mobile-menu">
-                      <Link href="/aboutus">
-                        <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                          About Us
-                        </div>
-                      </Link>
-                      <Link href="/casestudy">
-                        <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                          Case Study
-                        </div>
-                      </Link>
-                      <Link href="/services">
-                        <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                          Service
-                        </div>
-                      </Link>
-                      <Link href="/clients">
-                        <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                          Client
-                        </div>
-                      </Link>
-                      <Link href="/blogs">
-                        <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                          Blog
-                        </div>
-                      </Link>
-
-                      <Link href="/contact-us">
-                        <div
-                          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                          className="contact-mobile "
-                        >
-                          Contact Us
-                        </div>
-                      </Link>
-                    </div>
+                    <IconContext.Provider
+                      value={{ className: "mobile-social" }}
+                    >
+                      <a>
+                        <FaFacebook />
+                      </a>
+                    </IconContext.Provider>
+                    <IconContext.Provider
+                      value={{ className: "mobile-social" }}
+                    >
+                      <a>
+                        <FaLinkedin />
+                      </a>
+                    </IconContext.Provider>
+                    <IconContext.Provider
+                      value={{ className: "mobile-social" }}
+                    >
+                      <a>
+                        <FaInstagram />
+                      </a>
+                    </IconContext.Provider>
+                    <IconContext.Provider
+                      value={{ className: "mobile-social" }}
+                    >
+                      <a>
+                        <FaWhatsapp />
+                      </a>
+                    </IconContext.Provider>
                   </motion.div>
-                </div>
-                <motion.div
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className=" block mt-10 float-right mobile-menu-social"
-                >
-                  <IconContext.Provider value={{ className: "mobile-social" }}>
-                    <a>
-                      <FaFacebook />
-                    </a>
-                  </IconContext.Provider>
-                  <IconContext.Provider value={{ className: "mobile-social" }}>
-                    <a>
-                      <FaLinkedin />
-                    </a>
-                  </IconContext.Provider>
-                  <IconContext.Provider value={{ className: "mobile-social" }}>
-                    <a>
-                      <FaInstagram />
-                    </a>
-                  </IconContext.Provider>
-                  <IconContext.Provider value={{ className: "mobile-social" }}>
-                    <a>
-                      <FaWhatsapp />
-                    </a>
-                  </IconContext.Provider>
                 </motion.div>
-              </motion.div>
-            </div>
-          )}
+              </div>
+            )}
+          </div>
         </div>
       ) : (
         ""

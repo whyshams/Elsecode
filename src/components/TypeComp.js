@@ -11,12 +11,6 @@ export default function TypeComp() {
           // Same substring at the start will only be typed out once, initially
           "Case Study",
           1000,
-          "Case Study.",
-          1000,
-          "Case Study..",
-          1000,
-          "Case Study...",
-          1000,
         ]}
         wrapper="span"
         speed={50}
