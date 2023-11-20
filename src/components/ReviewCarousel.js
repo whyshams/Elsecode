@@ -26,6 +26,8 @@ export default function ReviewCarousel({ data }) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   return (
@@ -38,7 +40,7 @@ export default function ReviewCarousel({ data }) {
               <p className="w-80">&quot;{d.review}&quot;</p>
             </div>
             <div className="text-center mt-10 ">
-              <a href={d.ceolink}>
+              <a target="_blank" href={d.ceolink}>
                 <div className="flex justify-center">
                   <img
                     style={{
@@ -50,7 +52,7 @@ export default function ReviewCarousel({ data }) {
                   />
                 </div>
                 <div>
-                  <h3>{d.ceo}</h3>
+                  <h3 className="font-bold">{d.ceo}</h3>
                   <h3>{d.designation}</h3>
                 </div>
               </a>

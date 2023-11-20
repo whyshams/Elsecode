@@ -7,7 +7,8 @@ import RevealFromRight from "./RevealFromRight";
 import RevealFromLeft from "./RevealFromRight";
 import Link from "next/link";
 import CaseStudyReveal from "./CaseStudyReveal";
-
+import ParallaxLeftRight from "./ParallaxLeftRight";
+import TypeComp from "./TypeComp";
 async function getCaseStudy() {
   const client = new SanityClient({
     projectId: "46uxd6a7",
@@ -41,16 +42,19 @@ export default async function CaseStudyForHome() {
   return (
     <div>
       <div className="grid md:flex md:justify-center md:align-middle md:items-center">
-        <div className="md:basis-1/3 basis-3/3">
-          <div className="grid text-center">
-            <h1 className=" hidden md:flex md:justify-center md:text-5xl md:font-bold ">
-              Case Study
-            </h1>
-            <img className="md:hidden service-title-img" src="/case.png" />
-            <p className="text-gray-400 ">
-              A study in our project making process and impact
-            </p>
-          </div>
+        <div className="   md:basis-1/3 basis-3/3 grid text-center items-center place-items-center">
+          <ParallaxLeftRight>
+            <div className="case-study-main grid text-center items-center place-items-center mobile-hide">
+              <h1 className=" hidden md:flex md:justify-center md:text-5xl  ">
+                <TypeComp />
+              </h1>
+              <p className="text-gray-800 p-10 text-lg">
+                A study in our project making process and impact
+              </p>
+            </div>
+          </ParallaxLeftRight>
+
+          <img className="md:hidden service-title-img" src="/case.png" />
         </div>
         <div className="md:basis-2/3 basis-3/3">
           <div className=" flex justify-center ">

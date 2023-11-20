@@ -30,12 +30,10 @@ export default async function Home() {
     <>
       <div>
         <div className="">
-          <ParallaxParent>
-            <HeroBanner />
-          </ParallaxParent>
+          <HeroBanner />
         </div>
         <div className="">
-          <div className="mobile-hide">
+          <div className="mobile-hide mb-10">
             <ParallaxParent>
               <ServiceCategory />
             </ParallaxParent>
@@ -45,33 +43,23 @@ export default async function Home() {
           </div>
         </div>
         <div>
-          <div className="mobile-hide mb-10">
-            <ParallaxRightLeft>
-              <ClientLogoSlide />
-            </ParallaxRightLeft>
-          </div>
           <div className="md:hidden">
             <ClientLogoSlide />
           </div>
         </div>
         <div className="">
-          <div className="mt-10 mobile-hide">
-            <ParallaxLeftRight>
-              <CaseStudyForHome />
-            </ParallaxLeftRight>
+          <div className="mt-16 mobile-hide">
+            <CaseStudyForHome />
           </div>
           <div className="md:hidden">
             <CaseStudyForHome />
           </div>
         </div>
         <div className="mobile-hide">
-          <ParallaxRightLeft>
-            <div className="grid grid-cols-2 grid-rows-1">
-              <div className="">
-                <ReviewCarousel data={clientReviewData} />
-              </div>
-              <div className=" grid text-center items-center">
-                <div>
+          <div className="grid grid-cols-2 grid-rows-1">
+            <div className=" grid text-center items-center">
+              {/*
+                   <div>
                   <h2 className="text-5xl flex">
                     We have clients all over the World
                   </h2>
@@ -80,13 +68,25 @@ export default async function Home() {
                     been done
                   </p>
                 </div>
-              </div>
+                */}
+              <ParallaxLeftRight>
+                <ClientLogoSlide />
+              </ParallaxLeftRight>
             </div>
-          </ParallaxRightLeft>
+            <ParallaxRightLeft>
+              <div className="">
+                <ReviewCarousel data={clientReviewData} />
+              </div>
+            </ParallaxRightLeft>
+          </div>
         </div>
         <div className="md:hidden">
           <div className="grid grid-cols-1">
             <div className=" grid text-center items-center">
+              {/*
+              
+              
+              */}
               <div className="pt-8">
                 <h2 className="text-3xl flex">
                   We have clients all over the World
@@ -108,10 +108,10 @@ export default async function Home() {
             <div>
               <ParallaxLeftRight>
                 <div className="">
-                  <h2 className="text-5xl flex">
+                  <h2 className="text-3xl flex justify-center">
                     If You have any business, We might have some ideas for you
                   </h2>
-                  <p className="flex">
+                  <p className="flex justify-center">
                     So, lets generate ideas. Fill in the contact form and write
                     about your business or the project you have in mind. We will
                     reach you within 24 hours.

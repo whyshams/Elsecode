@@ -2,11 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: black;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffd02a;
+}
 .container {
   max-width: 100%;
-}
-* {
-  font-family: var(--font-acme);
 }
 
 .height-100 {
@@ -58,36 +74,61 @@
   height: auto;
 }
 .mobile-menu div {
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  padding-left: 3px;
 }
 .mobile-menu a div {
-  font-weight: bold;
+  font-weight: bolder;
+
+  font-family: var(--font-paytone);
+  font-size: 32px;
 }
 .mobile-menu-main {
   height: 100vh;
   width: 100%;
   overflow: hidden;
   border: 1px solid #ccc;
-  background-color: #fff;
+  background-color: #19181d;
   border-radius: 8px;
+  color: white;
 }
-
+.mobile-social {
+  color: white;
+  padding: 10px;
+  font-size: 45px;
+}
 .makeBlur {
   filter: blur(10px);
 }
 .mobile-menu-list {
-  float: right;
+  float: left;
   font-size: 18px;
-  letter-spacing: 0.2px;
+  letter-spacing: 2px;
 }
 .contact-mobile {
-  background: #2b9adf;
-  padding: 7px !important;
+  background: #ffd02a;
+
+  padding: 5px 10px !important;
+  margin-top: 20px;
   color: black;
   border-radius: 5px;
 }
+.case-study-main {
+  background-color: #ffd02a;
+  height: 75vh;
+  width: 400px;
+}
+.lett {
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 20px;
+}
 .desk-contact {
-  background-color: #93c310;
+  background-color: #ffd02a;
+  font-weight: bold;
+
   padding: 7px;
   border-radius: 7px;
 }
@@ -391,12 +432,18 @@ td {
 .slider {
   margin-top: 200px;
 }
+
+.footer-er-footer-main {
+  background: #19181d;
+  width: 90%;
+  border-radius: 25px;
+}
+
 footer {
   background-color: black;
   color: white;
 }
 footer div {
-  padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

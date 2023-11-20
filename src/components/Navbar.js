@@ -5,91 +5,137 @@ import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
 import { useMyContext } from "@/app/Context/ContextApi";
+import Image from "next/image";
+import {
+  FaLinkedin,
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+} from "react-icons/fa6";
 
 export default function Navbar() {
-  const { windowWidth, setMobileMenuOpen, mobileMenuOpen } = useMyContext();
+  const { windowWidth, setMobileMenuOpen, mobileMenuOpen, windowScroll } =
+    useMyContext();
   const [hover, setHover] = useState(false);
 
   return (
     <header className="header">
       {windowWidth > 1100 ? (
-        <motion.nav
-          initial={{ x: "100vw", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="flex desktop-navbar"
+        <div
+          style={{ position: "fixed", top: "0", zIndex: "100", width: "100%" }}
         >
-          <div className="basis-1/4">
-            <div className="flex justify-center">
-              <Link href="/">
-                <h1>LOGO</h1>
-              </Link>
-            </div>
+          <div style={{ position: "relative" }}>
+            <div
+              style={{
+                position: "absolute",
+                height: "100%",
+                width: windowScroll < 500 ? `${windowScroll / 4}%` : "100%",
+                zIndex: "-1",
+                background: "black",
+              }}
+            ></div>
+            <motion.nav
+              initial={{ x: "100vw", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="flex  desktop-navbar"
+              style={{ position: "relative", zIndex: "1111111" }}
+            >
+              <div className="basis-1/4">
+                <div className="flex justify-center">
+                  <Link href="/">
+                    {windowScroll > 35 ? (
+                      <Image
+                        src="/logowhite.png"
+                        width={250}
+                        height={150}
+                        alt="logo"
+                      />
+                    ) : (
+                      <Image
+                        src="/elsecodelogo.png"
+                        width={250}
+                        height={150}
+                        alt="logo"
+                      />
+                    )}
+                  </Link>
+                </div>
+              </div>
+              <div
+                className="basis-1/2 "
+                style={{
+                  color: windowScroll > 50 ? "white" : "black",
+                  transition: "background 1s ease",
+                }}
+              >
+                <div className="">
+                  <ul className="flex justify-center pt-5">
+                    <li className="mr-6 ">
+                      <Link href="/aboutus">About Us</Link>
+                    </li>
+                    <li className="mr-6">
+                      <Link href="/casestudy">Case Study</Link>
+                    </li>
+                    <li className="mr-6 ">
+                      <li
+                        onMouseEnter={() => setHover(true)}
+                        onMouseLeave={() => setHover(false)}
+                        onClick={() => setHover(true)}
+                      >
+                        <Link href="/services">Service</Link>
+                      </li>
+                      {hover && (
+                        <ul
+                          onMouseEnter={() => setHover(true)}
+                          onMouseLeave={() => setHover(false)}
+                          className="absolute submenu "
+                        >
+                          <li>
+                            <Link href="/services/wordpress-website-development">
+                              Wordpress Development
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href="/services/full-stack-webapp-development">
+                              Full Stack Development
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href="/services/web-design">Web Design</Link>
+                          </li>
+                          <li>
+                            <Link href="/services/seo-service">
+                              SEO Service
+                            </Link>
+                          </li>
+                          <li>
+                            <Link href="/services/mobile-app-development">
+                              Mobile App
+                            </Link>
+                          </li>
+                        </ul>
+                      )}
+                    </li>
+                    <li className="mr-6">
+                      <Link href="/clients">Client</Link>
+                    </li>
+                    <li className="mr-6">
+                      <Link href="/blogs">Blog</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="basis-1/4">
+                <div className="flex justify-center">
+                  <Link href="/contact-us">
+                    <div className="desk-contact">Contact Us</div>
+                  </Link>
+                </div>
+              </div>
+            </motion.nav>
           </div>
-          <div className="basis-1/2 ">
-            <div className="">
-              <ul className="flex justify-center mt-3">
-                <li className="mr-6 ">
-                  <Link href="/aboutus">About Us</Link>
-                </li>
-                <li className="mr-6">
-                  <Link href="/casestudy">Case Study</Link>
-                </li>
-                <li className="mr-6 ">
-                  <li
-                    onMouseEnter={() => setHover(true)}
-                    onMouseLeave={() => setHover(false)}
-                    onClick={() => setHover(true)}
-                  >
-                    <Link href="/services">Service</Link>
-                  </li>
-                  {hover && (
-                    <ul
-                      onMouseEnter={() => setHover(true)}
-                      onMouseLeave={() => setHover(false)}
-                      className="absolute submenu "
-                    >
-                      <li>
-                        <Link href="/services/wordpress-website-development">
-                          Wordpress Development
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/services/full-stack-webapp-development">
-                          Full Stack Development
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/services/web-design">Web Design</Link>
-                      </li>
-                      <li>
-                        <Link href="/services/seo-service">SEO Service</Link>
-                      </li>
-                      <li>
-                        <Link href="/services/mobile-app-development">
-                          Mobile App
-                        </Link>
-                      </li>
-                    </ul>
-                  )}
-                </li>
-                <li className="mr-6">
-                  <Link href="/clients">Client</Link>
-                </li>
-                <li className="mr-6">
-                  <Link href="/blogs">Blog</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="basis-1/4">
-            <div className="flex justify-center">
-              <Link href="/contact-us">
-                <div className="desk-contact">Contact Us</div>
-              </Link>
-            </div>
-          </div>
-        </motion.nav>
+        </div>
       ) : windowWidth < 1100 ? (
         <div>
           <motion.nav
@@ -101,7 +147,14 @@ export default function Navbar() {
             <div className="basis-1/2">
               <div className="float-left m-3">
                 <h1>
-                  <Link href="/">ElseCode</Link>
+                  <Link href="/">
+                    <Image
+                      src="/elsecodelogo.png"
+                      width={200}
+                      height={130}
+                      alt="logo"
+                    />
+                  </Link>
                 </h1>
               </div>
             </div>
@@ -115,11 +168,7 @@ export default function Navbar() {
                     <RiMenuUnfoldFill />
                   </IconContext.Provider>
                 ) : (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.7 }}
-                    transition={{ duration: 1 }}
-                  >
+                  <motion.div>
                     <IconContext.Provider value={{ className: "menu-icon" }}>
                       <RiMenuFoldFill />
                     </IconContext.Provider>
@@ -129,16 +178,20 @@ export default function Navbar() {
             </div>
           </motion.nav>
           {mobileMenuOpen && (
-            <div>
+            <div className="">
               <motion.div
                 initial={{ x: "100vw" }}
                 animate={{ x: 0 }}
                 transition={{ duration: 0.4 }}
                 exit={{ x: "100vw" }}
-                className="float-right mobile-menu-main"
+                className="float-right block mobile-menu-main"
               >
                 <div className="mobile-menu-list">
-                  <motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
                     <div className="mobile-menu">
                       <Link href="/aboutus">
                         <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -165,16 +218,11 @@ export default function Navbar() {
                           Blog
                         </div>
                       </Link>
-                      <Link href="/projects">
-                        <div onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-                          Project
-                        </div>
-                      </Link>
 
                       <Link href="/contact-us">
                         <div
                           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                          className="contact-mobile"
+                          className="contact-mobile "
                         >
                           Contact Us
                         </div>
@@ -182,6 +230,33 @@ export default function Navbar() {
                     </div>
                   </motion.div>
                 </div>
+                <motion.div
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className=" block mt-10 float-right mobile-menu-social"
+                >
+                  <IconContext.Provider value={{ className: "mobile-social" }}>
+                    <a>
+                      <FaFacebook />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider value={{ className: "mobile-social" }}>
+                    <a>
+                      <FaLinkedin />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider value={{ className: "mobile-social" }}>
+                    <a>
+                      <FaInstagram />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider value={{ className: "mobile-social" }}>
+                    <a>
+                      <FaWhatsapp />
+                    </a>
+                  </IconContext.Provider>
+                </motion.div>
               </motion.div>
             </div>
           )}

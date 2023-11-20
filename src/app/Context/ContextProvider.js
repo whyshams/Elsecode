@@ -5,6 +5,8 @@ import ContextApi from "./ContextApi";
 
 const ContextProvider = ({ children }) => {
   const [windowWidth, setWindowWidth] = useState();
+  const [windowScroll, setWindowScroll] = useState();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -19,11 +21,31 @@ const ContextProvider = ({ children }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  console.log(windowWidth);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setWindowScroll(window.scrollY);
+    };
+    if (typeof window !== "undefined") {
+      handleScroll();
+      window.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  console.log(windowScroll);
 
   return (
     <ContextApi.Provider
-      value={{ windowWidth, setMobileMenuOpen, setWindowWidth, mobileMenuOpen }}
+      value={{
+        windowWidth,
+        setMobileMenuOpen,
+        setWindowWidth,
+        mobileMenuOpen,
+        windowScroll,
+        setWindowScroll,
+      }}
     >
       {children}
     </ContextApi.Provider>

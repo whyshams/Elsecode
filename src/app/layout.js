@@ -4,6 +4,7 @@ import {
   Acme,
   Bellefair,
   Enriqueta,
+  Paytone_One,
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -22,21 +23,12 @@ const lilita = Lilita_One({
   weight: "400",
   variable: "--font-lilita",
 });
-const bree = Bree_Serif({
+const paytone = Paytone_One({
   subsets: ["latin"],
   weight: "400",
-  variable: "--font-bree",
+  variable: "--font-paytone",
 });
-const belle = Bellefair({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-belle",
-});
-const enri = Enriqueta({
-  subsets: ["latin"],
-  weight: "700",
-  variable: "--font-enri",
-});
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -44,7 +36,7 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <ContextProvider>
-        <body className={`${acme.variable}`}>
+        <body className={`${paytone.variable}`}>
           <Navbar />
 
           <div className=" container">{children}</div>

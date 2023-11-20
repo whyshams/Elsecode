@@ -30,7 +30,7 @@ export default function ParallaxParent({ children }) {
       <motion.div
         animate={inView ? "visible" : "hidden"}
         variants={variants}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        transition={{ duration: 0.65, delay: 0.3 }}
         ref={ref}
         key={"setuplayout_motion"}
       >

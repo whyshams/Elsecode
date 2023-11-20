@@ -36,7 +36,7 @@ export default async function ClientLogoSlide() {
   return (
     <RevealFromLeft>
       <div className=" text-center mt-10">
-        <h1 className=" hidden md:flex md:justify-center md:text-5xl md:font-bold md:my-2">
+        <h1 className=" hidden md:flex md:justify-center md:text-5xl  md:my-2">
           Clients
         </h1>
         <img className="md:hidden service-title-img" src="/client.png" />
