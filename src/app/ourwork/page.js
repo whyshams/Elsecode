@@ -74,7 +74,7 @@ export default async function page() {
         </div>
       </div>
       <div className="md:hidden">
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 mt-6">
           <div className=" grid text-center items-center">
             {/*
               

@@ -42,9 +42,8 @@ export default async function ClientLogoSlide() {
         >
           Clients
         </h1>
-        <img className="md:hidden service-title-img" src="/client.png" />
 
-        <p className="text-gray-400 my-3">
+        <p className="client-heading">
           The amazing people and organizations we have designed, developed and
           maintained websites for
         </p>

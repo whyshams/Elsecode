@@ -88,7 +88,9 @@ export default async function Home() {
             <CaseStudyForHome />
           </div>
         </div>
-
+        <div>
+          <BlogCompForHome />
+        </div>
         <div className=" mobile-hide h-screen grid place-items-center p-10">
           <div className="card grid grid-rows-1 grid-cols-2  p-4">
             <div className="w-full">
@@ -118,9 +120,6 @@ export default async function Home() {
               </ParallaxRightLeft>
             </div>
           </div>
-        </div>
-        <div>
-          <BlogCompForHome />
         </div>
       </div>
     </>

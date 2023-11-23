@@ -9,6 +9,7 @@ import Link from "next/link";
 import CaseStudyReveal from "./CaseStudyReveal";
 import ParallaxLeftRight from "./ParallaxLeftRight";
 import TypeComp from "./TypeComp";
+import ParallaxRightLeft from "./ParallaxRightLeft";
 async function getCaseStudy() {
   const client = new SanityClient({
     projectId: "46uxd6a7",
@@ -58,7 +59,7 @@ export default async function CaseStudyForHome() {
               </p>
             </div>
           </ParallaxLeftRight>
-          <ParallaxLeftRight>
+          <ParallaxRightLeft>
             <div className="md:hidden case-title-mobile">
               <h1 className=" flex justify-center text-5xl md:hidden  ">
                 <TypeComp />
@@ -67,7 +68,7 @@ export default async function CaseStudyForHome() {
                 A study in our project making process and impact
               </p>
             </div>
-          </ParallaxLeftRight>
+          </ParallaxRightLeft>
         </div>
         <div className="md:basis-2/3 basis-3/3">
           <div className=" flex justify-center ">

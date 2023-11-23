@@ -36,7 +36,7 @@ export default async function page() {
           <div className="content-page-title">
             <p>
               Indulge in excellence with our meticulously crafted services,where
-              innovation meets dedication to elevate your experience
+              innovation meets dedication to elevate your business
             </p>
           </div>
         </div>

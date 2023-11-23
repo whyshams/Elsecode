@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ImWordpress } from "react-icons/im";
 import { IconContext } from "react-icons";
 import { FaReact } from "react-icons/fa6";
+import Image from "next/image";
 
 export default function ServiceCategory() {
   const scrollRef = useRef(null);
@@ -15,10 +16,12 @@ export default function ServiceCategory() {
       <div className="services-category">
         <div className=" block text-center mb-10">
           <img className="md:hidden service-title-img" src="/service-2.png" />
-          <p className="text-gray-400 my-3">
-            Indulge in excellence with our meticulously crafted services,where
-            innovation meets dedication to elevate your experience
-          </p>
+          <div className="flex justify-center">
+            <p className="service-subheading">
+              Indulge in excellence with our services,where innovation meets
+              dedication to elevate your business
+            </p>
+          </div>
         </div>
 
         <div className="flex flex-wrap justify-center md:grid md:grid-cols-3 md:justify-items-center">
