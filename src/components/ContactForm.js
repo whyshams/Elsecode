@@ -14,7 +14,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     // Assuming your API endpoint is http://localhost:5000/submitFormData
-    const apiUrl = "http://localhost:5000/contact";
+    const apiUrl = "https://elsecode-backend.onrender.com/contact";
     const formData = {
       name: name,
       email: email,

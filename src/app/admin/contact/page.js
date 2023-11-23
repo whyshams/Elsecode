@@ -9,7 +9,7 @@ export default function Page() {
   const [passInput, setPassInput] = useState("");
 
   const fetchData = () => {
-    fetch("http://localhost:5000/contact")
+    fetch("https://elsecode-backend.onrender.com/contact")
       .then((d) => d.json())
       .then((dat) => setContactData(dat));
   };
