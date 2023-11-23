@@ -5,9 +5,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { createClient } from "@sanity/client";
 import Link from "next/link";
 import ParallaxLeftRight from "@/components/ParallaxLeftRight";
-import TypeComp from "@/components/TypeComp";
 import ParallaxRightLeft from "@/components/ParallaxRightLeft";
-import ParallaxOpacity from "@/components/ParallaxOpacity";
 
 async function getCaseStudy() {
   const client = new SanityClient({
@@ -17,7 +15,7 @@ async function getCaseStudy() {
   });
 
   const casestudy = await client.fetch({
-    query: `*[_type == 'casestudy']`,
+    query: `*[_type == 'blog']`,
     config: {
       next: { revalidate: 0 },
     },
@@ -31,38 +29,39 @@ const configuredSanityClient = createClient({
   apiVersion: "2022-03-07",
 });
 
-export default async function page() {
+export default async function BlogCompForHome() {
   const data = await getCaseStudy();
   const builder = imageUrlBuilder(configuredSanityClient);
 
   function urlFor(source) {
     return builder.image(source);
   }
-  //mainImage
-
-  const withoutfirstblog = [...data.slice(1)];
+  const withoutfirstblog = [...data.slice(1, 3)];
 
   return (
     <div>
       <div className=" text-center mt-20 mb-20">
         <div className="">
           <div className=" grid md:grid-cols-2 grid-cols-1">
-            <div className="pc-hide">
-              <ParallaxRightLeft>
-                <div className=" grid text-center items-center place-items-center">
-                  <h1 className=" md:flex md:justify-center text-5xl  ">
-                    <TypeComp />
-                  </h1>
-                  <p
-                    className="text-gray-800 p-10 text-lg"
-                    style={{ fontSize: "17px", letterSpacing: "5px" }}
-                  >
-                    A study in our project making process and impact
-                  </p>
-                </div>
-              </ParallaxRightLeft>
-            </div>
             <ParallaxLeftRight>
+              <div className=" text-3xl my-2">
+                <h2 className="blog-main-title">
+                  Blogs, Tech updates and News
+                </h2>
+                <div className="flex justify-center mt-4 m-10">
+                  <h1
+                    className=" flex justify-center align-middle items-center mt-10"
+                    style={{
+                      fontSize: "17px",
+                      letterSpacing: "5px",
+                    }}
+                  >
+                    Some news and tips that might help your business
+                  </h1>
+                </div>
+              </div>
+            </ParallaxLeftRight>
+            <ParallaxRightLeft>
               <Link href={`/blogs/${data[0].slug.current}`}>
                 <div className="flex justify-center mb-5">
                   <div className="m-2 blog-item">
@@ -74,66 +73,51 @@ export default async function page() {
                         borderRadius: "10px",
                       }}
                     />
+
                     <div className="float-left text-left mt-4">
                       <h1 className=" blog-content-title ">{data[0].title}</h1>
                     </div>
                     <div className="float-left text-left mt-4">
-                      <h1
-                        className=" flex justify-center align-middle items-center mt-10"
-                        style={{
-                          fontSize: "17px",
-                          letterSpacing: "5px",
+                      <ParallaxLeftRight>
+                        <h1
+                          className=" flex justify-center align-middle items-center mt-10"
+                          style={{
+                            fontSize: "17px",
+                            letterSpacing: "5px",
 
-                          borderBottom: "1px solid #ffd02a",
-                        }}
-                      >
-                        <div className="line mr-3"></div>
-                        Read More..
-                      </h1>
+                            borderBottom: "1px solid #ffd02a",
+                          }}
+                        >
+                          <div className="line mr-3"></div>
+                          Read More..
+                        </h1>
+                      </ParallaxLeftRight>
                     </div>
                   </div>
                 </div>
               </Link>
-            </ParallaxLeftRight>
-
-            <div className="mobile-hide">
-              <ParallaxRightLeft>
-                <div className=" grid text-center items-center place-items-center">
-                  <h1 className=" hidden md:flex md:justify-center md:text-5xl  ">
-                    <TypeComp />
-                  </h1>
-                  <p
-                    className="text-gray-800 p-10 text-lg"
-                    style={{ fontSize: "17px", letterSpacing: "5px" }}
-                  >
-                    A study in our project making process and impact
-                  </p>
-                </div>
-              </ParallaxRightLeft>
-            </div>
+            </ParallaxRightLeft>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2">
             {withoutfirstblog.map((cases, i) => (
               <div key={cases._id} className="flex justify-center mb-5">
                 <Link href={`/blogs/${cases.slug.current}`}>
                   <div className="m-2 blog-item">
-                    <ParallaxLeftRight>
+                    <ParallaxRightLeft>
                       <img
                         src={urlFor(cases.mainImage).url()}
                         style={{
                           width: "100%",
                           height: "auto",
                           borderRadius: "10px",
-                          margin: "5px",
                         }}
                       />
-                    </ParallaxLeftRight>
-
-                    <ParallaxRightLeft>
+                    </ParallaxRightLeft>
+                    <ParallaxLeftRight>
                       <div className="float-left text-left mt-4">
                         <h1 className="blog-content-title ">{cases.title}</h1>
                       </div>
-                    </ParallaxRightLeft>
+                    </ParallaxLeftRight>
 
                     <div className="float-left text-left mt-4">
                       <ParallaxLeftRight>

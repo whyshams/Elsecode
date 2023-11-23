@@ -4,6 +4,8 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import YourComponent from "@/components/BlogSample";
+import RevealFromLeft from "@/components/RevealFromLeft";
+import ParallaxLeftRight from "@/components/ParallaxLeftRight";
 async function getSingleService(slug) {
   const client = new SanityClient({
     projectId: "46uxd6a7",
@@ -36,19 +38,44 @@ export default async function page({ params }) {
 
   return (
     <div>
+      <h1
+        className="uppercase flex justify-center align-middle items-center mt-24 mb-16"
+        style={{ fontSize: "22px", letterSpacing: "5px" }}
+      >
+        <div className="line mr-3"></div>
+        Blogs
+      </h1>
       <div>
         {data.map((service) => (
-          <div key={service._id} className="service-blog">
-            <div className="flex justify-center">
-              <h1 className="font-bold text-5xl">{service.title}</h1>
-            </div>
-            <div className="main-image-service">
-              <div>
-                <img
-                  src={urlFor(service.mainImage).url()}
-                  style={{ width: "100%", height: "auto" }}
-                />
+          <div key={service._id} className="service-blog mb-10">
+            <div className="md:flex block">
+              <div className="flex justify-center text-center md:m-10">
+                <div className="content-page-title">
+                  <RevealFromLeft>
+                    <h1 className="text-2xl md:text-4xl">{service.title}</h1>
+                  </RevealFromLeft>
+                </div>
               </div>
+              <div className="">
+                <div className="mobile-hide mr-5">
+                  <ParallaxLeftRight>
+                    <img
+                      src={urlFor(service.mainImage).url()}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: "10px",
+                      }}
+                    />
+                  </ParallaxLeftRight>
+                </div>
+              </div>
+            </div>
+            <div className="pc-hide">
+              <img
+                src={urlFor(service.mainImage).url()}
+                style={{ width: "100%", height: "auto" }}
+              />
             </div>
             <div className="flex justify-center">
               <div className="service-post">

@@ -36,13 +36,17 @@ export default async function ClientLogoSlide() {
   return (
     <RevealFromLeft>
       <div className=" text-center mt-10">
-        <h1 className=" hidden md:flex md:justify-center md:text-5xl  md:my-2">
+        <h1
+          style={{ textTransform: "uppercase", letterSpacing: "10px" }}
+          className=" hidden md:flex md:justify-center md:text-5xl  md:my-2"
+        >
           Clients
         </h1>
         <img className="md:hidden service-title-img" src="/client.png" />
 
         <p className="text-gray-400 my-3">
-          The amazing people and organizations we have served
+          The amazing people and organizations we have designed, developed and
+          maintained websites for
         </p>
       </div>
 

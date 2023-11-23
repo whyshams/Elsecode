@@ -26,7 +26,11 @@ export default async function page() {
       {data.map((about) => (
         <div key={about._id} className="service-blog">
           <div className="service-post">
-            <h1 className="flex justify-center">{about.title}</h1>
+            <div className="flex justify-center my-14">
+              <h1 className="flex justify-center content-page-title">
+                {about.title}
+              </h1>
+            </div>
             <YourComponent value={about.body} />
           </div>
         </div>

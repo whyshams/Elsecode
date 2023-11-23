@@ -26,8 +26,19 @@ export default async function page() {
       {data.map((about) => (
         <div key={about._id} className="service-blog">
           <div className="service-post">
-            <h1 className="flex justify-center">{about.title}</h1>
-            <YourComponent value={about.body} />
+            <div className="flex justify-center mt-32 md:mt-2 mb-32">
+              <h1
+                className="uppercase flex justify-center align-middle items-center"
+                style={{ fontSize: "22px", letterSpacing: "5px" }}
+              >
+                <div className="line mr-3"></div>
+
+                {about.title}
+              </h1>
+            </div>
+            <div className="about-us-content">
+              <YourComponent value={about.body} />
+            </div>
           </div>
         </div>
       ))}

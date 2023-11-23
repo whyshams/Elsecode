@@ -12,14 +12,21 @@ import {
   FaFacebook,
   FaInstagram,
   FaWhatsapp,
+  FaTelegram,
+  FaSquareXTwitter,
 } from "react-icons/fa6";
+import ParallaxParent from "./ParallaxParent";
+import ParallaxOpacity from "./ParallaxOpacity";
+import ParallaxLeftRight from "./ParallaxLeftRight";
 
 export default function Footer() {
   return (
     <footer className="grid text-center place-items-center">
       <div className="text-center place-items-center grid my-10">
         <h1 className="lett ">Let</h1>
-        <Image src="/logowhite.png" width={300} height={220} />
+        <ParallaxParent>
+          <Image src="/logowhite.png" width={300} height={220} />
+        </ParallaxParent>
         <p className="m-10 text-lg ">
           Find You the best solution for your business to create a strong web
           and digital presence
@@ -27,28 +34,48 @@ export default function Footer() {
         <Link href="/contact-us">
           <div className="desk-contact text-black">Contact Us</div>
         </Link>
-        <div className=" flex justify-center place-content-center my-10 mobile-menu-social">
-          <IconContext.Provider value={{ className: "mobile-social" }}>
-            <a>
-              <FaFacebook />
-            </a>
-          </IconContext.Provider>
-          <IconContext.Provider value={{ className: "mobile-social" }}>
-            <a>
-              <FaLinkedin />
-            </a>
-          </IconContext.Provider>
-          <IconContext.Provider value={{ className: "mobile-social" }}>
-            <a>
-              <FaInstagram />
-            </a>
-          </IconContext.Provider>
-          <IconContext.Provider value={{ className: "mobile-social" }}>
-            <a>
-              <FaWhatsapp />
-            </a>
-          </IconContext.Provider>
-        </div>
+        <ParallaxLeftRight>
+          <div className=" flex justify-center place-content-center my-10 mobile-menu-social">
+            <IconContext.Provider value={{ className: "mobile-social" }}>
+              <a>
+                <FaFacebook />
+              </a>
+            </IconContext.Provider>
+            <IconContext.Provider value={{ className: "mobile-social" }}>
+              <a>
+                <FaLinkedin />
+              </a>
+            </IconContext.Provider>
+            <IconContext.Provider value={{ className: "mobile-social" }}>
+              <a>
+                <FaInstagram />
+              </a>
+            </IconContext.Provider>
+            <IconContext.Provider value={{ className: "mobile-social" }}>
+              <a>
+                <FaWhatsapp />
+              </a>
+            </IconContext.Provider>
+            <IconContext.Provider
+              value={{
+                className: "mobile-social",
+              }}
+            >
+              <a>
+                <FaTelegram />
+              </a>
+            </IconContext.Provider>
+            <IconContext.Provider
+              value={{
+                className: "mobile-social",
+              }}
+            >
+              <a>
+                <FaSquareXTwitter />
+              </a>
+            </IconContext.Provider>
+          </div>
+        </ParallaxLeftRight>
       </div>
 
       <div className="footer-er-footer-main grid grid-rows-1 grid-cols-3">
@@ -59,8 +86,8 @@ export default function Footer() {
               West Dhanmondi,Dhaka
             </li>
             <li className="my-2">
-              <a href="tel:+8801404519300">
-                <strong>Phone No :</strong> +8801404519300
+              <a href="tel:+8801771592189">
+                <strong>Phone No :</strong> +8801771592189
               </a>
             </li>
             <li>

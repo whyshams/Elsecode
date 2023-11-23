@@ -7,9 +7,26 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
+.loading_video {
+  width: 500px;
+  height: 350px;
+}
 body {
   position: relative;
+}
+.service-learn-more {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 16px;
+  color: #ffd02a;
+}
+
+.content-page-title {
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 7px;
+  width: 700px;
+  font-weight: bold;
 }
 
 ::-webkit-scrollbar {
@@ -97,6 +114,10 @@ body {
   color: white;
   padding: 10px;
   font-size: 45px;
+  transition: all 0.2s ease-in;
+}
+.mobile-social:hover {
+  color: #ffd02a;
 }
 .makeBlur {
   filter: blur(10px);
@@ -105,6 +126,10 @@ body {
   float: left;
   font-size: 18px;
   letter-spacing: 2px;
+}
+.loading_video_main {
+  width: 300px;
+  height: 240px;
 }
 .contact-mobile {
   background: #ffd02a;
@@ -120,9 +145,9 @@ body {
   width: 400px;
 }
 .lett {
-  font-size: 50px;
+  font-size: 40px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 10px;
   margin: 20px;
 }
 .desk-contact {
@@ -138,9 +163,16 @@ body {
 .welcome {
   height: 90vh;
 }
-
+.loading_video_mobile {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.new-mobile-hero a:hover {
+  color: #ffd02a;
+}
 .card {
-  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -153,7 +185,42 @@ body {
   background-position: center center;
   background-size: 100% auto;
 }
-
+.line {
+  height: 1px;
+  width: 30px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.about-us-content h2 strong {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 34px;
+  letter-spacing: 7px;
+}
+.about-us-content p {
+  font-size: 20px;
+}
+.about-us-content h2 {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.about-us-content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.hero-social-icon {
+  color: black;
+  font-size: 35px;
+  margin: 10px;
+  transition: all 300ms ease-in;
+}
+.hero-social-icon:hover {
+  color: #ffd02a;
+}
 .hero-button {
   background: #2b9adf;
   padding: 12px;
@@ -183,9 +250,12 @@ body {
   box-shadow: -11px -11px 22px #bdbdbd, 11px 11px 22px #ffffff;
 }
 .service-content h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 7px;
   font-weight: bold;
-  font-size: 22px;
-  margin: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .service-content p {
   margin-bottom: 20px;
@@ -208,10 +278,7 @@ body {
   border-radius: 29px;
   box-shadow: -11px -11px 22px #bdbdbd, 11px 11px 22px #ffffff;
 }
-.service-page .service-content h3 {
-  font-weight: bold;
-  margin: 30px;
-}
+
 .service-page .service-content p {
   margin: 20px;
 }
@@ -279,6 +346,20 @@ body {
 }
 .client-logo:hover {
   scale: 1.3;
+}
+.contact-form-head {
+  background-color: black;
+  background: black;
+  color: #ffd02a;
+  border-radius: 15px;
+  height: 100%;
+  text-align: left;
+}
+input::placeholder {
+  padding: 10px;
+}
+textarea::placeholder {
+  padding: 10px;
 }
 .mern-icon {
   width: 150px;
@@ -356,15 +437,17 @@ body {
   width: 900px;
   margin-top: 50px;
 }
-.service-blog h1 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 35px;
+
+.service-post h2 strong,
+.blockcontent-h2 {
+  font-size: 28px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 10px;
 }
 .service-post h2 {
-  font-size: 26px;
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 .service-post h3 {
   font-size: 26px;
@@ -372,13 +455,10 @@ body {
 .service-post h4 {
   font-size: 20px;
 }
-.service-post ul li {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.service-post p {
+  font-size: 18px;
 }
-.service-blog {
-  margin-top: 70px;
-}
+
 .service-post img {
   display: flex;
   justify-content: center;
@@ -409,15 +489,56 @@ td {
 
 .contact-form input {
   border: 1px solid rgb(197, 197, 197);
-  width: 350px;
+  width: 300px;
   height: 70px;
   margin: 10px;
   border-radius: 15px;
 }
+.our-work {
+  color: black;
+  background: #ffd02a;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.our-work-heading {
+  color: black;
+  background: #ffd02a;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.our-work:hover {
+  background: black;
+  color: #ffd02a;
+}
+.our-work:hover + .chat-contact {
+  background: #ffd02a;
+  color: black;
+}
+.blog-main-title {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+.blog-item {
+  width: 500px;
+}
+.blog-content-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+.chat-contact {
+  color: #ffd02a;
+  background: black;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.chat-contact:hover {
+  background: #ffd02a;
+  color: black;
+}
 .contact-form textarea {
   border: 1px solid rgb(197, 197, 197);
   border-radius: 15px;
-  width: 715px;
+  width: 625px;
   height: 100px;
   margin: 10px;
 }
@@ -432,11 +553,17 @@ td {
 .slider {
   margin-top: 200px;
 }
-
+.case-title-mobile {
+  background: #ffd02a;
+  border-radius: 15px;
+  margin: 10px;
+  margin-top: 40px;
+}
 .footer-er-footer-main {
   background: #19181d;
   width: 90%;
-  border-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
 }
 .bl-bg-menu-icon {
   color: white;
@@ -454,11 +581,23 @@ footer div {
 }
 
 @media screen and (max-width: 1000px) {
+  .blog-item {
+    width: 100%;
+  }
+  .case-study-main {
+    background-color: none;
+  }
+  .service-post {
+    width: 100%;
+  }
   .contact-form textarea {
     border: 1px solid black;
-    width: 350px;
+    width: 300px;
     height: 100px;
     margin: 10px;
+  }
+  .contact-form input {
+    width: 300px;
   }
   .article-card {
     width: 300px;
@@ -490,20 +629,6 @@ footer div {
   }
   .pc-hide {
     display: block;
-  }
-  .pc-hide a {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    margin-left: 110px;
-    margin-right: 110px;
-    border-radius: 10px;
-  }
-  .pc-hide a div {
-    background: #2b9adf;
-    width: 100px;
-    padding: 7px;
-    border-radius: 10px;
   }
 }
 @media screen and (max-width: 1331px) {

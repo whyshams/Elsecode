@@ -32,12 +32,14 @@ const configuredSanityClient = createClient({
 });
 
 export default async function CaseStudyForHome() {
-  const data = await getCaseStudy();
+  const caseData = await getCaseStudy();
   const builder = imageUrlBuilder(configuredSanityClient);
 
   function urlFor(source) {
     return builder.image(source);
   }
+
+  const data = [...caseData.slice(0, 4)];
 
   return (
     <div>
@@ -48,13 +50,24 @@ export default async function CaseStudyForHome() {
               <h1 className=" hidden md:flex md:justify-center md:text-5xl  ">
                 <TypeComp />
               </h1>
+              <p
+                className="text-gray-800 p-10 text-lg"
+                style={{ fontSize: "17px", letterSpacing: "5px" }}
+              >
+                A study in our project making process and impact
+              </p>
+            </div>
+          </ParallaxLeftRight>
+          <ParallaxLeftRight>
+            <div className="md:hidden case-title-mobile">
+              <h1 className=" flex justify-center text-5xl md:hidden  ">
+                <TypeComp />
+              </h1>
               <p className="text-gray-800 p-10 text-lg">
                 A study in our project making process and impact
               </p>
             </div>
           </ParallaxLeftRight>
-
-          <img className="md:hidden service-title-img" src="/case.png" />
         </div>
         <div className="md:basis-2/3 basis-3/3">
           <div className=" flex justify-center ">

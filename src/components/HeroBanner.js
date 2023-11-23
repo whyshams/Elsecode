@@ -6,6 +6,18 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { TypeAnimation } from "react-type-animation";
+import { IconContext } from "react-icons";
+import {
+  FaLinkedin,
+  FaFacebook,
+  FaInstagram,
+  FaWhatsapp,
+  FaTelegram,
+  FaSquareXTwitter,
+} from "react-icons/fa6";
+import RevealFromLeft from "./RevealFromLeft";
+import ParallaxParent from "./ParallaxParent";
+import ParallaxLeftRight from "./ParallaxLeftRight";
 export default function HeroBanner() {
   return (
     <>
@@ -35,10 +47,10 @@ export default function HeroBanner() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="flex"
+          transition={{ duration: 1 }}
         >
-          <div className=" basis-1/2 mt-72 ml-5">
+          {/*
+               <div className=" basis-1/2 mt-72 ml-5">
             <Reveal>
               <div className=" md:text-5xl provide">We Provide</div>
               <div className="hero-service">
@@ -74,11 +86,127 @@ export default function HeroBanner() {
               </div>
             </Reveal>
           </div>
+          
+          */}
+          <div>
+            <div className="grid text-center place-items-center mt-52">
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+              >
+                <video className="loading_video" autoPlay loop muted>
+                  <source src="/hero.mp4" type="video/mp4" />
+                </video>
+              </motion.div>
+
+              <motion.div
+                initial={{ y: "100vw" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+                className=" grid text-center place-items-center"
+              >
+                <h2
+                  className="text-3xl font-bold m-4 uppercase"
+                  style={{ width: "700px", letterSpacing: "7px" }}
+                >
+                  Helps your business find cutting-edge tech solutions and your
+                  customer find you
+                </h2>
+                <p className="text-xl m-4">
+                  Through Design and Development of Website, WebApp or Mobile
+                  application and Powerful SEO performance
+                </p>
+              </motion.div>
+              <div className="flex">
+                <ParallaxParent>
+                  <div className="flex justify-center mt-5 mb-5">
+                    <Link href="/ourwork">
+                      <div className="our-work px-10 py-5">Our Work</div>
+                    </Link>
+                  </div>
+                </ParallaxParent>
+                <ParallaxParent>
+                  <div className="flex justify-center mt-5 mb-5 ml-5">
+                    <Link href="/contact-us">
+                      <div className="chat-contact px-10 py-5">
+                        Let's Have a Chat !
+                      </div>
+                    </Link>
+                  </div>
+                </ParallaxParent>
+              </div>
+
+              <ParallaxLeftRight>
+                <motion.div
+                  initial={{ x: "-100vw" }}
+                  animate={{ x: 0 }}
+                  transition={{ duration: 0.7, delay: 1 }}
+                  className="flex mt-10"
+                >
+                  <IconContext.Provider
+                    value={{
+                      className: "hero-social-icon",
+                    }}
+                  >
+                    <a>
+                      <FaFacebook />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider
+                    value={{
+                      className: "hero-social-icon",
+                    }}
+                  >
+                    <a>
+                      <FaLinkedin />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider
+                    value={{
+                      className: "hero-social-icon",
+                    }}
+                  >
+                    <a>
+                      <FaInstagram />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider
+                    value={{
+                      className: "hero-social-icon",
+                    }}
+                  >
+                    <a>
+                      <FaWhatsapp />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider
+                    value={{
+                      className: "hero-social-icon",
+                    }}
+                  >
+                    <a>
+                      <FaTelegram />
+                    </a>
+                  </IconContext.Provider>
+                  <IconContext.Provider
+                    value={{
+                      className: "hero-social-icon",
+                    }}
+                  >
+                    <a>
+                      <FaSquareXTwitter />
+                    </a>
+                  </IconContext.Provider>
+                </motion.div>
+              </ParallaxLeftRight>
+            </div>
+          </div>
         </motion.div>
       </div>
-      <div className="pc-hide mobile-hero text-center">
-        <Reveal>
-          <div className="mt-56">
+      <div className="pc-hide text-center">
+        {/*  <div className="mt-56">
+          
             <div className=" md:text-5xl provide">We Provide</div>
 
             <div className="hero-service flex justify-center">
@@ -110,6 +238,116 @@ export default function HeroBanner() {
             <Link href="/contact-us">
               <div className="">Let&apos;s Talk</div>
             </Link>
+          </div> */}
+        <Reveal>
+          <div className=" new-mobile-hero grid text-center place-items-center mt-56 mb-10">
+            <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
+              <video className="loading_video_mobile" autoPlay loop muted>
+                <source src="/hero.mp4" type="video/mp4" />
+              </video>
+            </motion.div>
+            <motion.div
+              initial={{ y: "100vw" }}
+              animate={{ y: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+              className=" grid text-center place-items-center mt-4"
+            >
+              <h2
+                className="text-2xl m-4 uppercase"
+                style={{ letterSpacing: "5px" }}
+              >
+                Helps your business find cutting-edge tech solutions and your
+                customer find you
+              </h2>
+              <p className="text-lg m-4">
+                Through Design and Development of Website, WebApp or Mobile
+                application and Powerful SEO performance
+              </p>
+            </motion.div>
+            <div className="flex">
+              <ParallaxParent>
+                <div className="flex justify-center mt-5 mb-5">
+                  <Link href="/casestudy">
+                    <div className="our-work px-10 py-5">Our Work</div>
+                  </Link>
+                </div>
+              </ParallaxParent>
+              <ParallaxParent>
+                <div className="flex justify-center mt-5 mb-5 ml-5">
+                  <Link href="/contact-us">
+                    <div className="chat-contact px-10 py-5">
+                      Let's Have a Chat !
+                    </div>
+                  </Link>
+                </div>
+              </ParallaxParent>
+            </div>
+
+            <motion.div
+              initial={{ x: "-100vw" }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.7, delay: 1.3 }}
+              className="flex"
+            >
+              <IconContext.Provider
+                value={{
+                  style: { color: "black", fontSize: "35px", margin: "7px" },
+                }}
+              >
+                <a>
+                  <FaFacebook />
+                </a>
+              </IconContext.Provider>
+              <IconContext.Provider
+                value={{
+                  style: { color: "black", fontSize: "35px", margin: "7px" },
+                }}
+              >
+                <a>
+                  <FaLinkedin />
+                </a>
+              </IconContext.Provider>
+              <IconContext.Provider
+                value={{
+                  style: { color: "black", fontSize: "35px", margin: "7px" },
+                }}
+              >
+                <a>
+                  <FaInstagram />
+                </a>
+              </IconContext.Provider>
+              <IconContext.Provider
+                value={{
+                  style: { color: "black", fontSize: "35px", margin: "7px" },
+                }}
+              >
+                <a>
+                  <FaWhatsapp />
+                </a>
+              </IconContext.Provider>
+              <IconContext.Provider
+                value={{
+                  className: "hero-social-icon",
+                }}
+              >
+                <a>
+                  <FaTelegram />
+                </a>
+              </IconContext.Provider>
+              <IconContext.Provider
+                value={{
+                  className: "hero-social-icon",
+                }}
+              >
+                <a>
+                  <FaSquareXTwitter />
+                </a>
+              </IconContext.Provider>
+            </motion.div>
           </div>
         </Reveal>
       </div>

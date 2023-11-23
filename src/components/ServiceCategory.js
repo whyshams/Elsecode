@@ -53,6 +53,7 @@ export default function ServiceCategory() {
                         E-Commerce websites. Crafted with excellence, optimized
                         for success.
                       </p>
+                      <p className="service-learn-more">Learn More</p>
                     </div>
                   </div>
                 </Link>
@@ -76,6 +77,7 @@ export default function ServiceCategory() {
                       user-friendly, scalable excellence for your online
                       presence.
                     </p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>
@@ -99,6 +101,7 @@ export default function ServiceCategory() {
                       craftsmanship, creating seamless, user-friendly solutions
                       for the modern digital landscape.
                     </p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>
@@ -123,6 +126,7 @@ export default function ServiceCategory() {
                       delightful user experiences. Elevate your digital presence
                       with our visually appealing and user-friendly solutions.
                     </p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>
@@ -145,6 +149,7 @@ export default function ServiceCategory() {
                       Boost visibility, attract the right audience, and thrive
                       in the digital landscape.
                     </p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>

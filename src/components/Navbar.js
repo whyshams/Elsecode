@@ -11,6 +11,8 @@ import {
   FaFacebook,
   FaInstagram,
   FaWhatsapp,
+  FaSquareXTwitter,
+  FaTelegram,
 } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 
@@ -49,7 +51,7 @@ export default function Navbar() {
             <motion.nav
               initial={{ x: "100vw", opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.7 }}
               className="flex  desktop-navbar"
               style={{ position: "relative", zIndex: "1111111" }}
             >
@@ -97,7 +99,7 @@ export default function Navbar() {
                       >
                         <Link href="/services">Service</Link>
                       </li>
-                      {hover && (
+                      {hover && windowScroll < 200 && (
                         <ul
                           onMouseEnter={() => setHover(true)}
                           onMouseLeave={() => setHover(false)}
@@ -221,8 +223,8 @@ export default function Navbar() {
                         value={{
                           className:
                             windowScroll < 800 && pathname !== "/"
-                              ? "bl-bg-menu-icon"
-                              : windowScroll < 350
+                              ? "menu-icon"
+                              : windowScroll < 350 && pathname === "/"
                               ? "menu-icon"
                               : "bl-bg-menu-icon",
                         }}
@@ -255,6 +257,13 @@ export default function Navbar() {
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                           >
                             About Us
+                          </div>
+                        </Link>
+                        <Link href="/ourwork">
+                          <div
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                          >
+                            Our Work
                           </div>
                         </Link>
                         <Link href="/casestudy">
@@ -329,6 +338,24 @@ export default function Navbar() {
                     >
                       <a>
                         <FaWhatsapp />
+                      </a>
+                    </IconContext.Provider>
+                    <IconContext.Provider
+                      value={{
+                        className: "mobile-social",
+                      }}
+                    >
+                      <a>
+                        <FaTelegram />
+                      </a>
+                    </IconContext.Provider>
+                    <IconContext.Provider
+                      value={{
+                        className: "mobile-social",
+                      }}
+                    >
+                      <a>
+                        <FaSquareXTwitter />
                       </a>
                     </IconContext.Provider>
                   </motion.div>

@@ -27,12 +27,17 @@ export default function ReviewCarousel({ data }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 6000,
   };
 
   return (
     <div className="text-center items-center slider mb:mb-20">
-      <h1 className="mt-10 mb-10 text-4xl">Reviews</h1>
+      <h1
+        style={{ textTransform: "uppercase", letterSpacing: "10px" }}
+        className="mt-10 mb-10 text-4xl"
+      >
+        Reviews
+      </h1>
       <Slider {...settings}>
         {data.map((d) => (
           <div key={d._id}>

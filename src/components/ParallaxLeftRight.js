@@ -29,7 +29,7 @@ export default function ParallaxLeftRight({ children }) {
       <motion.div
         animate={inView ? "visible" : "hidden"}
         variants={variants}
-        transition={{ duration: 1.1, delay: 0.3 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
         ref={ref}
         key={"setuplayout_motion"}
       >

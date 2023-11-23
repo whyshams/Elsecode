@@ -4,6 +4,10 @@ import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
 import YourComponent from "@/components/BlogSample";
+import ParallaxRightLeft from "@/components/ParallaxRightLeft";
+import RevealFromLeft from "@/components/RevealFromLeft";
+import RevealFromRight from "@/components/RevealFromRight";
+import ParallaxLeftRight from "@/components/ParallaxLeftRight";
 async function getSingleService(slug) {
   const client = new SanityClient({
     projectId: "46uxd6a7",
@@ -33,17 +37,38 @@ export default async function page({ params }) {
   function urlFor(source) {
     return builder.image(source);
   }
-  console.log(data.body);
+
   return (
     <div>
+      <h1
+        className="uppercase flex justify-center align-middle items-center mt-24 mb-16"
+        style={{ fontSize: "22px", letterSpacing: "5px" }}
+      >
+        <div className="line mr-3"></div>
+        Services
+      </h1>
       <div>
         {data.map((service) => (
           <div key={service._id} className="service-blog">
-            <div className="flex justify-center">
-              <h1 className="font-bold text-5xl">{service.title}</h1>
+            <div className="flex justify-center text-center mt-24 mb-24">
+              <div className="content-page-title">
+                <RevealFromLeft>
+                  <h1 className="md:text-5xl text-2xl">{service.title}</h1>
+                </RevealFromLeft>
+              </div>
             </div>
             <div className="main-image-service">
-              <div>
+              <div className="mobile-hide">
+                <RevealFromRight>
+                  <ParallaxLeftRight>
+                    <img
+                      src={urlFor(service.categoryimage).url()}
+                      style={{ width: "100%", height: "auto" }}
+                    />
+                  </ParallaxLeftRight>
+                </RevealFromRight>
+              </div>
+              <div className="pc-hide">
                 <img
                   src={urlFor(service.categoryimage).url()}
                   style={{ width: "100%", height: "auto" }}
@@ -51,7 +76,7 @@ export default async function page({ params }) {
               </div>
             </div>
             <div className="flex justify-center">
-              <div className="service-post">
+              <div className="service-post mb-10">
                 <YourComponent value={service.body} />
               </div>
             </div>

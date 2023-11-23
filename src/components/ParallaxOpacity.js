@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useScroll, motion, useTransform, useMotionValue } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export default function ParallaxParent({ children }) {
+export default function ParallaxOpacity({ children }) {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 200]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
@@ -17,10 +17,10 @@ export default function ParallaxParent({ children }) {
   });
 
   const variants = {
-    visible: { opacity: 1, scale: 1 },
+    visible: { y: "-100vw", opacity: 1 },
     hidden: {
+      y: 0,
       opacity: 0,
-      scale: 0.65,
     },
   };
 

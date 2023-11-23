@@ -3,6 +3,9 @@ import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import imageUrlBuilder from "@sanity/image-url";
 import { createClient } from "@sanity/client";
+import ParallaxLeftRight from "./ParallaxLeftRight";
+import ParallaxRightLeft from "./ParallaxRightLeft";
+import ParallaxParent from "./ParallaxParent";
 
 const configuredSanityClient = createClient({
   projectId: "46uxd6a7",
@@ -22,22 +25,24 @@ const SampleImageComponent = ({ value, isInline }) => {
   return (
     <>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <img
-          className="blog-image"
-          src={urlFor(value)
-            .width(isInline ? 100 : 800)
-            .fit("max")
-            .auto("format")
-            .url()}
-          alt={value.alt || " "}
-          loading="lazy"
-          style={{
-            // Display alongside text if image appears inside a block text span
+        <ParallaxLeftRight>
+          <img
+            className="blog-image"
+            src={urlFor(value)
+              .width(isInline ? 100 : 800)
+              .fit("max")
+              .auto("format")
+              .url()}
+            alt={value.alt || " "}
+            loading="lazy"
+            style={{
+              // Display alongside text if image appears inside a block text span
 
-            // Avoid jumping around with aspect-ratio CSS property
-            aspectRatio: width / height,
-          }}
-        />
+              // Avoid jumping around with aspect-ratio CSS property
+              aspectRatio: width / height,
+            }}
+          />
+        </ParallaxLeftRight>
       </div>
     </>
   );
@@ -48,6 +53,45 @@ const components = {
     image: SampleImageComponent,
     // Any other custom types you have in your content
     // Examples: mapLocation, contactForm, code, featuredProjects, latestNews, etc.
+  },
+  block: {
+    h2: ({ children }) => (
+      <ParallaxRightLeft>
+        <h2 className="blockcontent-h2">{children}</h2>
+      </ParallaxRightLeft>
+    ),
+    h1: ({ children }) => (
+      <ParallaxRightLeft>
+        <h2 className="blockcontent-h2">{children}</h2>
+      </ParallaxRightLeft>
+    ),
+    h3: ({ children }) => (
+      <ParallaxRightLeft>
+        <h2 className="blockcontent-h2">{children}</h2>
+      </ParallaxRightLeft>
+    ),
+    h4: ({ children }) => (
+      <ParallaxRightLeft>
+        <h2 className="blockcontent-h2">{children}</h2>
+      </ParallaxRightLeft>
+    ),
+  },
+  marks: {
+    link: ({ value, children }) => {
+      const target = (value?.href || "").startsWith("http")
+        ? "_blank"
+        : undefined;
+      return (
+        <a
+          href={value?.href}
+          target={target}
+          rel={target === "_blank" && "noindex nofollow"}
+          style={{ color: "blue" }}
+        >
+          {children}
+        </a>
+      );
+    },
   },
 };
 

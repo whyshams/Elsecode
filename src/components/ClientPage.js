@@ -26,8 +26,10 @@ export default async function ClientComp() {
       <div>
         <ClientLogoSlide />
       </div>
-      <div className="text-center">
-        <ReviewCarousel data={data} />
+      <div className="mt-24 mb-24">
+        <div className="text-center">
+          <ReviewCarousel data={data} />
+        </div>
       </div>
     </div>
   );

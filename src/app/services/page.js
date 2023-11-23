@@ -21,16 +21,25 @@ async function getServices() {
 
 export default async function page() {
   const data = await getServices();
-  console.log(data[0]);
 
   return (
     <div>
       <div className=" block text-center mt-20 mb-20">
-        <h1 className=" text-5xl font-bold my-2">Services</h1>
-        <p className="text-gray-400 my-3">
-          Indulge in excellence with our meticulously crafted services,where
-          innovation meets dedication to elevate your experience
-        </p>
+        <h1
+          className="uppercase flex justify-center align-middle items-center"
+          style={{ fontSize: "22px", letterSpacing: "5px" }}
+        >
+          <div className="line mr-3"></div>
+          Services
+        </h1>
+        <div className="flex justify-center mt-14 mb-14">
+          <div className="content-page-title">
+            <p>
+              Indulge in excellence with our meticulously crafted services,where
+              innovation meets dedication to elevate your experience
+            </p>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -41,8 +50,11 @@ export default async function page() {
                 <Link href={`/services/${data[0].slug.current}`}>
                   <div className="">
                     <div className=" grid text-center">
-                      <h3>{data[0].title}</h3>
+                      <h3 className="service-page-card-title">
+                        {data[0].title}
+                      </h3>
                       <p>{data[0].titledescription}</p>
+                      <p className="service-learn-more">Learn More</p>
                     </div>
                   </div>
                 </Link>
@@ -57,6 +69,7 @@ export default async function page() {
                   <div className=" grid text-center">
                     <h3>{data[1].title}</h3>
                     <p>{data[1].titledescription}</p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>
@@ -69,6 +82,7 @@ export default async function page() {
                   <div className=" grid text-center">
                     <h3>{data[2].title}</h3>
                     <p>{data[2].titledescription}</p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>
@@ -83,6 +97,7 @@ export default async function page() {
                   <div className=" grid text-center">
                     <h3>{data[3].title}</h3>
                     <p>{data[3].titledescription}</p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>
@@ -95,6 +110,7 @@ export default async function page() {
                   <div className=" grid text-center">
                     <h3>{data[4].title}</h3>
                     <p>{data[4].titledescription}</p>
+                    <p className="service-learn-more">Learn More</p>
                   </div>
                 </div>
               </Link>
