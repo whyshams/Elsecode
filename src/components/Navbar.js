@@ -315,28 +315,40 @@ export default function Navbar() {
                     <IconContext.Provider
                       value={{ className: "mobile-social" }}
                     >
-                      <a>
+                      <a
+                        target="_blank"
+                        href="https://www.facebook.com/profile.php?id=61553105173758&mibextid=ZbWKwL"
+                      >
                         <FaFacebook />
                       </a>
                     </IconContext.Provider>
                     <IconContext.Provider
                       value={{ className: "mobile-social" }}
                     >
-                      <a>
+                      <a
+                        target="_blank"
+                        href="https://www.linkedin.com/company/elsecode/"
+                      >
                         <FaLinkedin />
                       </a>
                     </IconContext.Provider>
                     <IconContext.Provider
                       value={{ className: "mobile-social" }}
                     >
-                      <a>
+                      <a
+                        target="_blank"
+                        href="https://instagram.com/elsecode.tech?igshid=YTQwZjQ0NmI0OA=="
+                      >
                         <FaInstagram />
                       </a>
                     </IconContext.Provider>
                     <IconContext.Provider
                       value={{ className: "mobile-social" }}
                     >
-                      <a>
+                      <a
+                        target="_blank"
+                        href="https://wa.me/message/BYM5JEQH6JTDC1"
+                      >
                         <FaWhatsapp />
                       </a>
                     </IconContext.Provider>
@@ -345,7 +357,7 @@ export default function Navbar() {
                         className: "mobile-social",
                       }}
                     >
-                      <a>
+                      <a target="_blank" href="https://t.me/elsecodetech">
                         <FaTelegram />
                       </a>
                     </IconContext.Provider>
@@ -354,7 +366,10 @@ export default function Navbar() {
                         className: "mobile-social",
                       }}
                     >
-                      <a>
+                      <a
+                        target="_blank"
+                        href="https://x.com/ElseCode92302?t=X7EnJzqazjyj2y7MASd3UQ&s=09"
+                      >
                         <FaSquareXTwitter />
                       </a>
                     </IconContext.Provider>

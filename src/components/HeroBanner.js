@@ -130,7 +130,7 @@ export default function HeroBanner() {
                   <div className="flex justify-center mt-5 mb-5 ml-5">
                     <Link href="/contact-us">
                       <div className="chat-contact px-10 py-5">
-                        Let's Have a Chat !
+                        Let&apos;s Have a Chat !
                       </div>
                     </Link>
                   </div>
@@ -149,7 +149,10 @@ export default function HeroBanner() {
                       className: "hero-social-icon",
                     }}
                   >
-                    <a>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/profile.php?id=61553105173758&mibextid=ZbWKwL"
+                    >
                       <FaFacebook />
                     </a>
                   </IconContext.Provider>
@@ -158,7 +161,10 @@ export default function HeroBanner() {
                       className: "hero-social-icon",
                     }}
                   >
-                    <a>
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/company/elsecode/"
+                    >
                       <FaLinkedin />
                     </a>
                   </IconContext.Provider>
@@ -167,7 +173,10 @@ export default function HeroBanner() {
                       className: "hero-social-icon",
                     }}
                   >
-                    <a>
+                    <a
+                      target="_blank"
+                      href="https://instagram.com/elsecode.tech?igshid=YTQwZjQ0NmI0OA=="
+                    >
                       <FaInstagram />
                     </a>
                   </IconContext.Provider>
@@ -176,7 +185,10 @@ export default function HeroBanner() {
                       className: "hero-social-icon",
                     }}
                   >
-                    <a>
+                    <a
+                      target="_blank"
+                      href="https://wa.me/message/BYM5JEQH6JTDC1"
+                    >
                       <FaWhatsapp />
                     </a>
                   </IconContext.Provider>
@@ -185,7 +197,7 @@ export default function HeroBanner() {
                       className: "hero-social-icon",
                     }}
                   >
-                    <a>
+                    <a target="_blank" href="">
                       <FaTelegram />
                     </a>
                   </IconContext.Provider>
@@ -194,7 +206,10 @@ export default function HeroBanner() {
                       className: "hero-social-icon",
                     }}
                   >
-                    <a>
+                    <a
+                      target="_blank"
+                      href="https://x.com/ElseCode92302?t=X7EnJzqazjyj2y7MASd3UQ&s=09"
+                    >
                       <FaSquareXTwitter />
                     </a>
                   </IconContext.Provider>
@@ -280,7 +295,7 @@ export default function HeroBanner() {
                 <div className="flex justify-center mt-5 mb-5 ml-5">
                   <Link href="/contact-us">
                     <div className="chat-contact px-10 py-5">
-                      Let's Have a Chat !
+                      Let&apos;s Have a Chat !
                     </div>
                   </Link>
                 </div>
@@ -298,7 +313,10 @@ export default function HeroBanner() {
                   style: { color: "black", fontSize: "35px", margin: "7px" },
                 }}
               >
-                <a>
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/profile.php?id=61553105173758&mibextid=ZbWKwL"
+                >
                   <FaFacebook />
                 </a>
               </IconContext.Provider>
@@ -307,7 +325,10 @@ export default function HeroBanner() {
                   style: { color: "black", fontSize: "35px", margin: "7px" },
                 }}
               >
-                <a>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/elsecode/"
+                >
                   <FaLinkedin />
                 </a>
               </IconContext.Provider>
@@ -316,7 +337,10 @@ export default function HeroBanner() {
                   style: { color: "black", fontSize: "35px", margin: "7px" },
                 }}
               >
-                <a>
+                <a
+                  target="_blank"
+                  href="https://instagram.com/elsecode.tech?igshid=YTQwZjQ0NmI0OA=="
+                >
                   <FaInstagram />
                 </a>
               </IconContext.Provider>
@@ -325,7 +349,7 @@ export default function HeroBanner() {
                   style: { color: "black", fontSize: "35px", margin: "7px" },
                 }}
               >
-                <a>
+                <a target="_blank" href="https://wa.me/message/BYM5JEQH6JTDC1">
                   <FaWhatsapp />
                 </a>
               </IconContext.Provider>
@@ -334,7 +358,7 @@ export default function HeroBanner() {
                   className: "hero-social-icon",
                 }}
               >
-                <a>
+                <a target="_blank" href="https://t.me/elsecodetech">
                   <FaTelegram />
                 </a>
               </IconContext.Provider>
@@ -343,7 +367,10 @@ export default function HeroBanner() {
                   className: "hero-social-icon",
                 }}
               >
-                <a>
+                <a
+                  target="_blank"
+                  href="https://x.com/ElseCode92302?t=X7EnJzqazjyj2y7MASd3UQ&s=09"
+                >
                   <FaSquareXTwitter />
                 </a>
               </IconContext.Provider>

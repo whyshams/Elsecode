@@ -58,7 +58,7 @@ export default function ContactHeading() {
           <p>+8801771592189</p>
         </a>
         <div className="flex justify-center place-items-center mt-8">
-          <a href="whatsapp://send?phone=+8801771592189">
+          <a target="_blank" href="https://wa.me/message/BYM5JEQH6JTDC1">
             <IconContext.Provider
               value={{
                 style: {
@@ -71,7 +71,7 @@ export default function ContactHeading() {
               <IoLogoWhatsapp />
             </IconContext.Provider>
           </a>
-          <a href="tg://msg?to=username">
+          <a target="_blank" href="https://t.me/elsecodetech">
             <IconContext.Provider
               value={{
                 style: {
