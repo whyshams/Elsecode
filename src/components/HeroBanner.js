@@ -286,7 +286,7 @@ export default function HeroBanner() {
             <div className="flex">
               <ParallaxParent>
                 <div className="flex justify-center mt-5 mb-5">
-                  <Link href="/casestudy">
+                  <Link href="/ourwork">
                     <div className="our-work px-10 py-5">Our Work</div>
                   </Link>
                 </div>
