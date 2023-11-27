@@ -6,6 +6,8 @@ import { PortableText } from "@portabletext/react";
 import YourComponent from "@/components/BlogSample";
 import RevealFromLeft from "@/components/RevealFromLeft";
 import ParallaxLeftRight from "@/components/ParallaxLeftRight";
+import Head from "next/head";
+
 async function getSingleService(slug) {
   const client = new SanityClient({
     projectId: "46uxd6a7",
@@ -27,6 +29,27 @@ const configuredSanityClient = createClient({
   useCdn: process.env.NODE_ENV === "production",
   apiVersion: "2022-03-07",
 });
+
+export async function generateMetadata({ params }) {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const data = await getSingleService(slug);
+  const builder = imageUrlBuilder(configuredSanityClient);
+  function urlFor(source) {
+    return builder.image(source);
+  }
+  const title = data.map((d) => d.title);
+  const image = data.map((d) => urlFor(d.mainImage).url());
+
+  return {
+    title: `${title[0]} -A blog by ElseCode`,
+    openGraph: {
+      images: image,
+    },
+  };
+}
 
 export default async function page({ params }) {
   const slug = params.slug;

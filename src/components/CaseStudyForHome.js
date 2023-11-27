@@ -74,7 +74,7 @@ export default async function CaseStudyForHome() {
           <div className=" flex justify-center ">
             <div className="grid grid-cols-1 md:grid-cols-2 ">
               {data.map((cases, i) => (
-                <div key={cases._id}>
+                <div key={cases._id} className="mt-3 md:mt-0">
                   <CaseStudyReveal cases={cases} i={i} />
                   {/*
                     <Link href={`/casestudy/${cases.slug.current}`}>

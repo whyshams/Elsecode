@@ -4,6 +4,15 @@ import ParallaxLeftRight from "@/components/ParallaxLeftRight";
 import ParallaxRightLeft from "@/components/ParallaxRightLeft";
 import ContactHeading from "@/components/ContactHeading";
 
+export const metadata = {
+  title: "Contact ElseCode",
+  description:
+    "Dialogue makes idea become reality, so lets start a dialogue with ElseCode - ElseCode HELPS YOUR BUSINESS FIND CUTTING-EDGE TECH SOLUTIONS AND YOUR CUSTOMER FIND YOU - Web Development, Web Design, SEO service, Wordpress development, shopify development, MERN stack, React js development, UI/UX design",
+  openGraph: {
+    images: "/elsecodelogo.png",
+  },
+};
+
 export default function page() {
   return (
     <>

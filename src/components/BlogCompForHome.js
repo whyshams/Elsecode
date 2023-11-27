@@ -66,6 +66,7 @@ export default async function BlogCompForHome() {
                 <div className="flex justify-center mb-5">
                   <div className="m-2 blog-item">
                     <img
+                      alt={data[0].title}
                       src={urlFor(data[0].mainImage).url()}
                       style={{
                         width: "100%",

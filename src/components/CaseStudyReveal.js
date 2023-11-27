@@ -1,14 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
 import { createClient } from "@sanity/client";
+import Image from "next/image";
+import ParallaxParent from "./ParallaxParent";
+import Reveal from "./Reveal";
 
 export default function CaseStudyReveal({ cases, i }) {
+  const [hovered, SetHovered] = useState(false);
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 200]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
@@ -49,10 +53,22 @@ export default function CaseStudyReveal({ cases, i }) {
       <Link href={`/casestudy/${cases.slug.current}`}>
         <div className=" w-1/2">
           <div className="article-card md:m-7">
-            <div className="content">
+            {hovered && (
+              <div className="content ">
+                <p className="title glass">{cases.title}</p>
+              </div>
+            )}
+            <div className="content md:hidden ">
               <p className="title glass">{cases.title}</p>
             </div>
-            <img src={urlFor(cases.mainImage).url()} alt={cases.title} />
+
+            <div onMouseEnter={() => SetHovered(true)}>
+              <Image
+                fill
+                src={urlFor(cases.mainImage).url()}
+                alt={cases.title}
+              />
+            </div>
           </div>
         </div>
       </Link>

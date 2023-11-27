@@ -47,6 +47,15 @@ const configuredSanityClient = createClient({
   apiVersion: "2022-03-07",
 });
 
+export const metadata = {
+  title: "Works of ElseCode",
+  description:
+    "Go Through the amazing people and organization that ElseCode has served and their project making process and impact - ElseCode HELPS YOUR BUSINESS FIND CUTTING-EDGE TECH SOLUTIONS AND YOUR CUSTOMER FIND YOU - Web Development, Web Design, SEO service, Wordpress development, shopify development, MERN stack, React js development, UI/UX design",
+  openGraph: {
+    images: "/elsecodelogo.png",
+  },
+};
+
 export default async function page() {
   const clientReviewData = await getClientReview();
   const data = await getCaseStudy();

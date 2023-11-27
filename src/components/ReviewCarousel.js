@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+import Image from "next/image";
 
 export default function ReviewCarousel({ data }) {
   const configuredSanityClient = createClient({
@@ -26,7 +27,7 @@ export default function ReviewCarousel({ data }) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 6000,
   };
 
@@ -47,11 +48,11 @@ export default function ReviewCarousel({ data }) {
             <div className="text-center mt-10 ">
               <a target="_blank" href={d.ceolink}>
                 <div className="flex justify-center">
-                  <img
+                  <Image
+                    width={150}
+                    height={150}
                     style={{
                       borderRadius: "50%",
-                      width: "150px",
-                      height: "150px",
                     }}
                     src={urlFor(d.ceoimage).url()}
                   />

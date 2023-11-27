@@ -29,6 +29,29 @@ const configuredSanityClient = createClient({
   useCdn: process.env.NODE_ENV === "production",
   apiVersion: "2022-03-07",
 });
+export async function generateMetadata({ params }) {
+  // read route params
+  const slug = params.slug;
+
+  // fetch data
+  const data = await getSingleService(slug);
+  const builder = imageUrlBuilder(configuredSanityClient);
+  function urlFor(source) {
+    return builder.image(source);
+  }
+  const title = data.map((d) => d.title);
+  const image = data.map((d) => urlFor(d.categoryimage).url());
+
+  const description = data.map((d) => d.titledescription);
+
+  return {
+    title: `${title[0]} - by ElseCode`,
+    openGraph: {
+      images: image,
+    },
+    description: description[0],
+  };
+}
 
 export default async function page({ params }) {
   const slug = params.slug;

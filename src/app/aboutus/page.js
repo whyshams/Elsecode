@@ -18,6 +18,15 @@ async function getServices() {
   return about;
 }
 
+export const metadata = {
+  title: "ElseCode - About Us",
+  description:
+    "Learn About ElseCode -ElseCode HELPS YOUR BUSINESS FIND CUTTING-EDGE TECH SOLUTIONS AND YOUR CUSTOMER FIND YOU - Web Development, Web Design, SEO service, Wordpress development, shopify development, MERN stack, React js development, UI/UX design",
+  openGraph: {
+    images: "/elsecodelogo.png",
+  },
+};
+
 export default async function page() {
   const data = await getServices();
 

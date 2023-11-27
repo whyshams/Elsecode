@@ -27,6 +27,15 @@ async function getClientReview() {
   return casestudy;
 }
 
+export const metadata = {
+  title: "ElseCode",
+  description:
+    "ELSECODE HELPS YOUR BUSINESS FIND CUTTING-EDGE TECH SOLUTIONS AND YOUR CUSTOMER FIND YOU - Web Development, Web Design, SEO service, Wordpress development, shopify development, MERN stack, React js development, UI/UX design",
+  openGraph: {
+    images: "/elsecodelogo.png",
+  },
+};
+
 export default async function Home() {
   const clientReviewData = await getClientReview();
   return (

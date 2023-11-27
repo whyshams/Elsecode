@@ -417,12 +417,14 @@ textarea::placeholder {
 .article-card .content {
   box-sizing: border-box;
   width: 100%;
+  z-index: 10000;
   position: absolute;
   padding: 30px 20px 20px 20px;
   height: auto;
   bottom: 0;
   font-weight: bold;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  transition: all 0.3s ease;
 }
 
 .article-card .date,
