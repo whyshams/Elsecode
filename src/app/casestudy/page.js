@@ -35,7 +35,20 @@ export const metadata = {
   description:
     "Go Through the Case Studies of ElseCode where they have discussed about their Project making process and impact - ElseCode HELPS YOUR BUSINESS FIND CUTTING-EDGE TECH SOLUTIONS AND YOUR CUSTOMER FIND YOU - Web Development, Web Design, SEO service, Wordpress development, shopify development, MERN stack, React js development, UI/UX design",
   openGraph: {
-    images: "/elsecodelogo.png",
+    images: "https://elsecode.tech/elsecodelogo.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
