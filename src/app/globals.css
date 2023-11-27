@@ -457,20 +457,32 @@ textarea::placeholder {
   text-transform: uppercase;
   letter-spacing: 10px;
 }
-.service-post h2 {
+.service-post h2,
+.service-blog h2 {
   margin-top: 70px;
   margin-bottom: 70px;
 }
-.service-post h3 {
-  font-size: 26px;
+.service-post h3,
+.service-blog h3 {
+  font-size: 24px;
 }
-.service-post h4 {
+.service-post h4,
+.service-blog h4 {
   font-size: 20px;
 }
-.service-post p {
+.service-post p,
+.service-blog p {
   font-size: 18px;
 }
-
+.service-post p,
+.service-post ul,
+.service-post li {
+  margin-top: 18px;
+}
+.service-blog p,
+.service-blog ul {
+  margin-top: 15px;
+}
 .service-post img {
   display: flex;
   justify-content: center;

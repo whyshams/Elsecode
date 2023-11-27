@@ -63,7 +63,7 @@ export default async function page() {
               </ParallaxRightLeft>
             </div>
             <ParallaxLeftRight>
-              <Link href={`/blogs/${data[0].slug.current}`}>
+              <Link href={`/casestudy/${data[0].slug.current}`}>
                 <div className="flex justify-center mb-5">
                   <div className="m-2 blog-item">
                     <img
@@ -115,7 +115,7 @@ export default async function page() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             {withoutfirstblog.map((cases, i) => (
               <div key={cases._id} className="flex justify-center mb-5">
-                <Link href={`/blogs/${cases.slug.current}`}>
+                <Link href={`/casestudy/${cases.slug.current}`}>
                   <div className="m-2 blog-item">
                     <ParallaxLeftRight>
                       <img
