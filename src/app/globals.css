@@ -417,8 +417,9 @@ textarea::placeholder {
 .article-card .content {
   box-sizing: border-box;
   width: 100%;
-  z-index: 10000;
+  z-index: 1;
   position: absolute;
+
   padding: 30px 20px 20px 20px;
   height: auto;
   bottom: 0;
