@@ -14,6 +14,25 @@ body {
 body {
   position: relative;
 }
+
+.slide-in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform-origin: bottom;
+  background-color: #19181d;
+}
+.slide-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform-origin: top;
+  background-color: #ffd02a;
+}
 .service-learn-more {
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -60,10 +79,26 @@ body {
   -webkit-background-clip: text;
 }
 .desktop-navbar a {
-  margin: 20px;
-
+  padding: 20px;
   font-size: 20px;
+  transition: all 0.1s ease-in;
+  font-family: var(--font-roboto);
+  font-weight: 400;
 }
+.desktop-navbar li:hover a {
+  font-weight: bold;
+}
+.desktop-navbar li:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #ffd02a;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.desktop-navbar li:hover:after {
+  transform: scaleX(1);
+}
+
 .desktop-navbar {
   height: auto;
 }
@@ -91,15 +126,16 @@ body {
   height: auto;
 }
 .mobile-menu div {
-  padding-top: 15px;
   padding-bottom: 25px;
   padding-left: 3px;
 }
 .mobile-menu a div {
-  font-weight: bolder;
-
-  font-family: var(--font-paytone);
-  font-size: 32px;
+  font-weight: 700;
+  font-family: var(--font-roboto);
+  font-size: 34px;
+}
+.mobile-menu {
+  padding-top: 30px;
 }
 .mobile-menu-main {
   height: 100vh;
@@ -125,7 +161,6 @@ body {
 .mobile-menu-list {
   float: left;
   font-size: 18px;
-  letter-spacing: 2px;
 }
 .loading_video_main {
   width: 300px;
@@ -152,10 +187,23 @@ body {
 }
 .desk-contact {
   background-color: #ffd02a;
-  font-weight: bold;
 
   padding: 7px;
   border-radius: 7px;
+  transition: all 0.2s ease-in;
+}
+.desk-contact:hover {
+  background-color: #19181d;
+  color: #ffd02a;
+}
+
+.desk-contact-active {
+  background-color: #19181d;
+  color: #ffd02a;
+
+  padding: 7px;
+  border-radius: 7px;
+  transition: all 0.2s ease-in;
 }
 .blur {
   filter: blur(2px);
@@ -188,6 +236,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 5px;
 }
+.boldy a {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
 .services-category {
   height: auto;
   width: 100%;

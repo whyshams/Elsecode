@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { IconContext } from "react-icons";
 import { useMyContext } from "@/app/Context/ContextApi";
 import Image from "next/image";
+
 import {
   FaLinkedin,
   FaFacebook,
@@ -85,13 +86,25 @@ export default function Navbar() {
               >
                 <div className="">
                   <ul className="flex justify-center pt-5">
-                    <li className="mr-6 ">
+                    <li
+                      className={
+                        pathname === "/aboutus" ? "ml-6 boldy" : "ml-6"
+                      }
+                    >
                       <Link href="/aboutus">About Us</Link>
                     </li>
-                    <li className="mr-6">
+                    <li
+                      className={
+                        pathname === "/casestudy" ? "ml-6 boldy" : "ml-6"
+                      }
+                    >
                       <Link href="/casestudy">Case Study</Link>
                     </li>
-                    <li className="mr-6 ">
+                    <li
+                      className={
+                        pathname === "/services" ? "ml-6 boldy" : "ml-6"
+                      }
+                    >
                       <li
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
@@ -131,10 +144,16 @@ export default function Navbar() {
                         </ul>
                       )}
                     </li>
-                    <li className="mr-6">
+                    <li
+                      className={
+                        pathname === "/clients" ? "ml-6 boldy" : "ml-6"
+                      }
+                    >
                       <Link href="/clients">Client</Link>
                     </li>
-                    <li className="mr-6">
+                    <li
+                      className={pathname === "/blogs" ? "ml-6 boldy" : "ml-6"}
+                    >
                       <Link href="/blogs">Blog</Link>
                     </li>
                   </ul>
@@ -143,7 +162,15 @@ export default function Navbar() {
               <div className="basis-1/4">
                 <div className="flex justify-center">
                   <Link href="/contact-us">
-                    <div className="desk-contact">Contact Us</div>
+                    <div
+                      className={
+                        pathname === "/contact-us"
+                          ? "desk-contact-active"
+                          : "desk-contact"
+                      }
+                    >
+                      Contact Us
+                    </div>
                   </Link>
                 </div>
               </div>

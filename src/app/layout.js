@@ -5,6 +5,8 @@ import {
   Bellefair,
   Enriqueta,
   Paytone_One,
+  Roboto,
+  Kanit,
 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -28,6 +30,11 @@ const paytone = Paytone_One({
   weight: "400",
   variable: "--font-paytone",
 });
+const roboto = Kanit({
+  subsets: ["latin"],
+  weight: ["700", "400"],
+  variable: "--font-roboto",
+});
 
 export default function RootLayout({ children }) {
   return (
@@ -37,10 +44,11 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logowhite.png" />
       </Head>
       <ContextProvider>
-        <body className={`${paytone.variable}`}>
+        <body className={`${roboto.variable}`}>
           <Navbar />
 
           <div className=" container">{children}</div>
+
           <Footer />
         </body>
       </ContextProvider>

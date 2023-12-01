@@ -51,7 +51,7 @@ export default function ServiceCategory() {
 
                       <h3>Wordpress & WooCommerce</h3>
 
-                      <p>
+                      <p className="p-2">
                         Your go-to for stunning, user-friendly WordPress and
                         E-Commerce websites. Crafted with excellence, optimized
                         for success.
@@ -75,7 +75,7 @@ export default function ServiceCategory() {
                       </div>
                     </div>
                     <h3>Full Stack Development</h3>
-                    <p>
+                    <p className="p-2">
                       Crafting dynamic web solutions from complex ideas. Expect
                       user-friendly, scalable excellence for your online
                       presence.
@@ -99,7 +99,7 @@ export default function ServiceCategory() {
                       </IconContext.Provider>
                     </div>
                     <h3>Mobile App</h3>
-                    <p>
+                    <p className="p-2">
                       We bring your mobile app dreams to life with expert
                       craftsmanship, creating seamless, user-friendly solutions
                       for the modern digital landscape.
@@ -124,7 +124,7 @@ export default function ServiceCategory() {
                       </div>
                     </div>
                     <h3>UI/UX Design</h3>
-                    <p>
+                    <p className="p-2">
                       we create captivating UI/UX designs for seamless and
                       delightful user experiences. Elevate your digital presence
                       with our visually appealing and user-friendly solutions.
@@ -147,7 +147,7 @@ export default function ServiceCategory() {
                       </div>
                     </div>
                     <h3>SEO Services</h3>
-                    <p>
+                    <p className="p-2">
                       we elevate your online presence with expert SEO services.
                       Boost visibility, attract the right audience, and thrive
                       in the digital landscape.
