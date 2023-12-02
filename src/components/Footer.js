@@ -93,7 +93,7 @@ export default function Footer() {
       <div className="footer-er-footer-main grid grid-rows-1 grid-cols-3">
         <div className="col-span-3 md:col-span-1">
           <ul>
-            <li className="w-52 py-2">
+            <li className="md:w-52 py-2 px-7 md:px-0">
               <strong>Office :</strong> 235/A, AB Firoza Garden,Pathshala Goli,
               West Dhanmondi,Dhaka
             </li>

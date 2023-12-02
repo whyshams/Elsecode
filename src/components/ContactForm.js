@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -37,17 +40,45 @@ const ContactForm = () => {
       setDescription("");
 
       if (response.ok) {
-        console.log("Data submitted successfully");
+        toast.success("Thank You For Reaching Us!", {
+          position: "bottom-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       } else {
-        console.error("Failed to submit data");
+        toast.error("There were some Mistkes. Please try again", {
+          position: "bottom-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     } catch (error) {
-      console.error("Error submitting data:", error);
+      toast.error("There were some Mistkes. Please try again", {
+        position: "bottom-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
 
   return (
     <div className="flex justify-center">
+      <ToastContainer />
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="md:flex">
           <input
@@ -59,7 +90,7 @@ const ContactForm = () => {
           />
 
           <input
-            placeholder="EMAIL"
+            placeholder="EMAIL (Required)"
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
